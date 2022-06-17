@@ -3,6 +3,12 @@
 
 # imports
 import requests
+import logging
+
+# Setup basic logging configuration
+logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
+                    format="%(asctime)s 0 %(levelname)s - %(message)s")
+# logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
 
 # Function to send query out
 def run_query(query):
@@ -12,10 +18,14 @@ def run_query(query):
     else:
         raise Exception("Query failed to run by returning code of {}. {}".format(response.status_code, query))
 
+# Testing user-generated query
+item_input = input('Enter Item to search: ')
+logging.info(f"Testing for item query of {item_input}")
+
 # Query payload
-new_query = """
-{
-    itemsByName(name: "shampoo") {
+new_query = f"""
+{{
+    itemsByName(name: "{item_input}") {{
         name
         shortName
         avg24hPrice
@@ -23,15 +33,17 @@ new_query = """
         low24hPrice
         high24hPrice
         basePrice
-        sellFor{
+        sellFor{{
             price
             source
-        }
-    }
-}
+        }}
+    }}
+}}
+
 """
 # Send query and get our relevant data
 result = run_query(new_query)
+logging.info(f"Result of run_query is {result}")
 trimmed_result = result['data']
 trimmed_result = trimmed_result['itemsByName']
 trimmed_result = trimmed_result[0]
@@ -51,14 +63,16 @@ for item in price_list:
 # Determine highest price
 highest_price = 0
 
+# Iterate through available price data to find the highest available
 for item in price_list:
     if item['price'] > highest_price:
         highest_source = item['source']
         highest_price = item['price']
-        
-print(f"Highest Price- {highest_price}₽ from {highest_source}₽\n"
-      f"Average Price- {average_price}₽\nLast Low- {last_low}₽\n"
-      f"Last 24Hr Low- {low_past_day}₽\nLast 24hr High- {high_past_day}₽")
 
-print(f"24hr High is {int(high_past_day) - int(highest_price)}₽ greater than current high")
-print(f"Recommend ~{int((int(high_past_day) - int(highest_price))/2 + int(highest_price))}₽ for sale price")
+# Display pertinent information        
+print(f"\nHighest Price- {highest_price}₽ from {highest_source}₽\n"
+        f"Average Price- {average_price}₽\nLast Low- {last_low}₽\n"
+        f"Last 24Hr Low- {low_past_day}₽\nLast 24hr High- {high_past_day}₽",
+        f"\n24hr High is {int(high_past_day) - int(highest_price)}₽ greater than current high",
+        f"\nRecommend ~{int((int(high_past_day) - int(highest_price))/2 + int(highest_price))}₽ for sale price\n")
+logging.info("Program successfully completed operation")

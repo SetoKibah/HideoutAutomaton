@@ -1,0 +1,5 @@
+2022-06-16 20:55:21,738 0 INFO - Testing for item query of shampoo
+2022-06-16 20:55:21,741 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-16 20:55:21,940 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-16 20:55:21,941 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Schaman shampoo', 'shortName': 'Shampoo', 'avg24hPrice': 34751, 'lastLowPrice': 40000, 'low24hPrice': 28000, 'high24hPrice': 98888, 'basePrice': 7000, 'sellFor': [{'price': 3500, 'source': 'prapor'}, {'price': 4410, 'source': 'therapist'}, {'price': 2800, 'source': 'fence'}, {'price': 3430, 'source': 'skier'}, {'price': 40000, 'source': 'fleaMarket'}]}]}}
+2022-06-16 20:55:21,943 0 INFO - Program successfully completed operation
