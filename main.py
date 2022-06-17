@@ -2,9 +2,11 @@
 # Utilize: API with https://tarkov.dev/ and create our own database.
 
 # imports
+from time import time
 import requests
 import logging
 import sheets_handling
+import time
 
 # Setup basic logging configuration
 logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
@@ -12,7 +14,8 @@ logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
 # logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
 
 # Setting our test items list, will select important items later for testing
-items_list = ['pile of meds', 'shampoo', 'slickers', 'wires']
+items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip', 'eagle', 'can of max energy', 
+            'scav backpack', 'canister with purified water', 'bottle of water', 'cms surgical kit']
 
 # Function to send query out
 def run_query(query):
@@ -91,4 +94,6 @@ if __name__ == "__main__":
     for item in items_dictionary:
         start_point_a = sheets_handling.get_next_empty_cell('A')
         sheets_handling.update_row(item,items_dictionary[item], start_point_a)
+        # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
+        time.sleep(15)
     logging.info("Program successfully completed operation")
