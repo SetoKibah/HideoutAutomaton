@@ -10,6 +10,9 @@ logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
                     format="%(asctime)s 0 %(levelname)s - %(message)s")
 # logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
 
+# Setting our test items list, will select important items later for testing
+items_list = ['pile of meds', 'shampoo', 'slickers', 'wires']
+
 # Function to send query out
 def run_query(query):
     response = requests.post('https://api.tarkov.dev/graphql', json={'query': query})
@@ -57,31 +60,32 @@ for item in price_list:
 
 if __name__ == "__main__":
     
-    # Testing user-generated query
-    item_input = input('Enter Item to search: ')
-    logging.info(f"Testing for item query of {item_input}")
+    # Testing list items comprehension with more pertinent information to take
+    items_dictionary = {}
+    for item_top in items_list:
+        
+        logging.info(f"Testing for item query of {item_top}")
+        trimmed_result = query_send_receive(item_top)
 
-    trimmed_result = query_send_receive(item_input)
-    # Separate information to be used
-    price_list = trimmed_result['sellFor']
-    average_price = trimmed_result['avg24hPrice']
-    last_low = trimmed_result['lastLowPrice']
-    low_past_day = trimmed_result['low24hPrice']
-    high_past_day = trimmed_result['high24hPrice']
-    # Determine highest price
+        # Separate information to be used
+        price_list = trimmed_result['sellFor']
+        average_price = trimmed_result['avg24hPrice']
+        last_low = trimmed_result['lastLowPrice']
+        low_past_day = trimmed_result['low24hPrice']
+        high_past_day = trimmed_result['high24hPrice']
+        
+        # Determine highest price
+        highest_price = 0
+        # Iterate through available price data to find the highest available
+        for item in price_list:
+            if item['price'] > highest_price:
+                highest_source = item['source']
+                highest_price = item['price']
+                items_dictionary[item_top] = f"{item['price']} from {item['source']}"
 
-    highest_price = 0
-
-    # Iterate through available price data to find the highest available
-    for item in price_list:
-        if item['price'] > highest_price:
-            highest_source = item['source']
-            highest_price = item['price']
-
-    # Display pertinent information        
-    print(f"\nHighest Price- {highest_price}₽ from {highest_source}₽\n"
-            f"Average Price- {average_price}₽\nLast Low- {last_low}₽\n"
-            f"Last 24Hr Low- {low_past_day}₽\nLast 24hr High- {high_past_day}₽",
-            f"\n24hr High is {int(high_past_day) - int(highest_price)}₽ greater than current high",
-            f"\nRecommend ~{int((int(high_past_day) - int(highest_price))/2 + int(highest_price))}₽ for sale price\n")
+    # Display pertinent information 
+    print("**************************")       
+    for item in items_dictionary:
+        print(f"{item}: {items_dictionary[item]}")
+    print("**************************")
     logging.info("Program successfully completed operation")
