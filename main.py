@@ -90,7 +90,7 @@ if __name__ == "__main__":
     print("**************************\n")
 
     # Take information and post it to our google sheet
-    #
+    # Is not made available to general public. If wanted, create your own keys and give same file name.
     for item in items_dictionary:
         start_point_a = sheets_handling.get_next_empty_cell('A')
         sheets_handling.update_row(item,items_dictionary[item], start_point_a)
