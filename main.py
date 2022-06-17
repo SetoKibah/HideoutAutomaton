@@ -4,6 +4,7 @@
 # imports
 import requests
 import logging
+import sheets_handling
 
 # Setup basic logging configuration
 logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
@@ -52,12 +53,7 @@ def query_send_receive(item_input):
     
     return trimmed_result
 
-"""
-print('All available prices:')
-for item in price_list:
-    print(f"{item['source']}:{item['price']}")
-""" 
-
+# Main function to run our more purposeful code
 if __name__ == "__main__":
     
     # Testing list items comprehension with more pertinent information to take
@@ -81,11 +77,18 @@ if __name__ == "__main__":
             if item['price'] > highest_price:
                 highest_source = item['source']
                 highest_price = item['price']
-                items_dictionary[item_top] = f"{item['price']} from {item['source']}"
+                items_dictionary[item_top] = item['price']
+        logging.info(f"{item_top} completed successfully")
 
-    # Display pertinent information 
-    print("**************************")       
+    # Display pertinent information (changes frequently)
+    print("\n**************************")       
     for item in items_dictionary:
         print(f"{item}: {items_dictionary[item]}")
-    print("**************************")
+    print("**************************\n")
+
+    # Take information and post it to our google sheet
+    #
+    for item in items_dictionary:
+        start_point_a = sheets_handling.get_next_empty_cell('A')
+        sheets_handling.update_row(item,items_dictionary[item], start_point_a)
     logging.info("Program successfully completed operation")
