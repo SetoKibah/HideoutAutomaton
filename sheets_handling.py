@@ -28,21 +28,20 @@ def get_next_empty_cell(column):
     return start_point
         
 # Used for updating one cell at a time, applicable for updating a list over time.
-def update_single_cell(values, input_value):
-    column, index = values
-    value = input_value
-    wks.update(f"{column}{index}", float(value))
-    logging.info('Single Cell update action complete')
+def update_single_cell(cell, input_value):
+    wks.update(cell, input_value)
 
 # Update going out through the rows (ported from test sheets, will alter to be more specific later)
-def update_row(name, value, start_row):
+def update_row(name, value, start_row, fee_price):
     logging.info('Update row action start')
     column, index = start_row
     current_date = dt.date.today()
     current_time = dt.datetime.now()
     current_time = current_time.strftime("%H:%M")
     wks.update(f"A{index}", name)
-    wks.update(f"B{index}", float(value))
+    wks.update(f"B{index}", int(value))
     wks.update(f"C{index}", current_time)
     wks.update(f"D{index}", str(current_date))
+    wks.update(f"E{index}", fee_price)
+    wks.update(f"F{index}", f"=B{index}-E{index}", value_input_option="USER_ENTERED")
     logging.info('Update row action complete')
