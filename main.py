@@ -39,6 +39,7 @@ def query_send_receive(item_input):
             low24hPrice
             high24hPrice
             basePrice
+            fleaMarketFee
             sellFor{{
                 price
                 source
@@ -61,6 +62,7 @@ if __name__ == "__main__":
     
     # Testing list items comprehension with more pertinent information to take
     items_dictionary = {}
+    fee_list = []
     for item_top in items_list:
         
         logging.info(f"Testing for item query of {item_top}")
@@ -72,7 +74,9 @@ if __name__ == "__main__":
         last_low = trimmed_result['lastLowPrice']
         low_past_day = trimmed_result['low24hPrice']
         high_past_day = trimmed_result['high24hPrice']
-        
+        flea_market_fee = trimmed_result['fleaMarketFee']
+        # add the fee to our list
+        fee_list.append(flea_market_fee)
         # Determine highest price
         highest_price = 0
         # Iterate through available price data to find the highest available
@@ -88,12 +92,19 @@ if __name__ == "__main__":
     for item in items_dictionary:
         print(f"{item}: {items_dictionary[item]}")
     print("**************************\n")
-
+    
     # Take information and post it to our google sheet
     # Is not made available to general public. If wanted, create your own keys and give same file name.
+    
+    # Index tracking for updating fees rows 
+    start_index = 1
+    fee_index = 0
     for item in items_dictionary:
-        start_point_a = sheets_handling.get_next_empty_cell('A')
-        sheets_handling.update_row(item,items_dictionary[item], start_point_a)
+        start_index += 1
+        start_point_a = ('A', start_index)
+        #start_point_a = sheets_handling.get_next_empty_cell('A')
+        sheets_handling.update_row(item,items_dictionary[item], start_point_a, fee_list[fee_index])
+        fee_index += 1
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
         time.sleep(15)
     logging.info("Program successfully completed operation")
