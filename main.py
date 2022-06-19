@@ -15,7 +15,8 @@ logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
 
 # Setting our test items list, will select important items later for testing
 items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip', 'eagle', 'can of max energy', 
-            'scav backpack', 'canister with purified water', 'bottle of water', 'cms surgical kit']
+            'scav backpack', 'canister with purified water', 'bottle of water', 'cms surgical kit', 'Can of Hot Rod energy drink',
+             'ox bleach', 'secure flash drive', 'aramid fiber fabric']
 
 # Function to send query out
 def run_query(query):
