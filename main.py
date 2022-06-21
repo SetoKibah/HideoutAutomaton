@@ -11,7 +11,7 @@ import time
 # Setup basic logging configuration
 logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
                     format="%(asctime)s 0 %(levelname)s - %(message)s")
-# logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
+# Logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
 
 # Setting our test items list, will select important items later for testing
 items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip', 'eagle', 'can of max energy', 
@@ -19,6 +19,16 @@ items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip
              'ox bleach', 'secure flash drive', 'aramid fiber fabric', 'vodka', 'wilston cigarettes', 'bottle of water', 'emergency water ration',
              'aquamari water bottle', 'aseptic bandage', 'toilet paper', 'm.u.l.e.', 'propital', 'salewa', 'ifak', 'capacitors', 'printed circuit board',
              '5.45x39mm pp', '9x18mm PM Rg028', 'weapon parts']
+
+# A list of components for our tracked items. Will use this to further calculate our true profit after cost of material.
+components_list = ['ai-2 medkit', 'aseptic bandage', 'augmentin antibiotic pills', 'soap', 'bottle of water', 'alyonka', 'pack of oat flakes',
+                'army crackers', 'power cord', 'bottle of saline solution', 'bottle of hydrogen peroxide', 'hawk', 'wires', 'nippers', 'm67 hand grenade',
+                'rdg-2b smoke grenade', 'can of tarcola', 'can of majaica', 'fleece', 'flyye mbss', 'water filter', 'medical tools', 'car first aid kit', 
+                'pack of sugar', '42 signature blend english tea', 'ox bleach', 'alkaline cleaner', 'pack of sodium bicarbonate', 'broken gphone smartphone', 
+                'broken gphone x smartphone', 'ssd drive', 'paca soft armor', 'moonshine', 'apollo soyuz cigarettes', 'canister with purified water',
+                'kektape duct tape', 'gas mask air filter', 'fleece fabric', 'printer paper', 'zagustin hemostatic drug injector', 'morphine injector',
+                'can of max energy drink', 'pile of meds', 'ibuprofen painkillers', 'golden star balm', 'analgin painkillers', 'calok-b hemostatic applicator',
+                'esmarch tourniquet', 'army bandage', 'power supply unit', 'dvd drive', 'gas analyzer', '5.45x39mm PS gs', 'bolts', 'kite', 'molot vpo-209 .366 tkm carbine']
 
 # Function to send query out
 def run_query(query):
