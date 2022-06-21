@@ -31,6 +31,7 @@ components_list = ['ai-2 medkit', 'aseptic bandage', 'augmentin antibiotic pills
                 'can of max energy drink', 'pile of meds', 'ibuprofen painkillers', 'golden star balm', 'analgin painkillers', 'calok-b hemostatic applicator',
                 'esmarch tourniquet', 'army bandage', 'power supply unit', 'dvd drive', 'gas analyzer', '5.45x39mm PS gs', 'bolts', 'kite', 'molot vpo-209 .366 tkm carbine']
 
+
 # Function to send query out
 def run_query(query):
     response = requests.post('https://api.tarkov.dev/graphql', json={'query': query})
@@ -40,7 +41,7 @@ def run_query(query):
         raise Exception("Query failed to run by returning code of {}. {}".format(response.status_code, query))
 
 
-
+# Format to send out queries to get our data
 def query_send_receive(item_input):
     # Query payload
     new_query = f"""
@@ -64,6 +65,7 @@ def query_send_receive(item_input):
     trimmed_result = trimmed_result[0]
     
     return trimmed_result
+
 
 # Function will update the spreadsheet with our tracked items
 def update_items():
@@ -90,14 +92,12 @@ def update_items():
                 items_dictionary[item_top] = item['price']
         
         logging.info(f"{item_top} completed successfully")
-
     
     # Take information and post it to our google sheet
     # Is not made available to general public. If wanted, create your own keys and give same file name.
-    
-    # Index tracking for updating fees rows 
-    start_index = 1
+    # Index tracking for updating our rows 
     fee_index = 0
+    start_index = 1
     print('Updating worksheet')
     for item in items_dictionary:
         start_index += 1
@@ -107,6 +107,7 @@ def update_items():
         fee_index += 1
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
         time.sleep(15)
+
 
 # Main function to run our more purposeful code
 if __name__ == "__main__":
