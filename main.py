@@ -7,9 +7,10 @@ import requests
 import logging
 import sheets_handling
 import time
+import progressbar
 
 # Setup basic logging configuration
-logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
+logging.basicConfig(level=logging.INFO, filename="Automaton.log", filemode="w",
                     format="%(asctime)s 0 %(levelname)s - %(message)s")
 # Logging levels DEBUG, INFO, WARNING, ERROR, CRITICAL are available for now. Will modify later
 
@@ -46,12 +47,6 @@ def query_send_receive(item_input):
     {{
         itemsByName(name: "{item_input}") {{
             name
-            shortName
-            avg24hPrice
-            lastLowPrice
-            low24hPrice
-            high24hPrice
-            basePrice
             fleaMarketFee
             sellFor{{
                 price
@@ -70,24 +65,18 @@ def query_send_receive(item_input):
     
     return trimmed_result
 
-# Main function to run our more purposeful code
-if __name__ == "__main__":
-    
+# Function will update the spreadsheet with our tracked items
+def update_items():
     # Testing list items comprehension with more pertinent information to take
     items_dictionary = {}
     fee_list = []
-    print('Querying our items')
+    
     for item_top in items_list:
-        print(f"{item_top} query starts...")
         logging.info(f"Testing for item query of {item_top}")
         trimmed_result = query_send_receive(item_top)
 
         # Separate information to be used
         price_list = trimmed_result['sellFor']
-        average_price = trimmed_result['avg24hPrice']
-        last_low = trimmed_result['lastLowPrice']
-        low_past_day = trimmed_result['low24hPrice']
-        high_past_day = trimmed_result['high24hPrice']
         flea_market_fee = trimmed_result['fleaMarketFee']
         # add the fee to our list
         fee_list.append(flea_market_fee)
@@ -99,7 +88,7 @@ if __name__ == "__main__":
                 highest_source = item['source']
                 highest_price = item['price']
                 items_dictionary[item_top] = item['price']
-        print(f"{item_top} query complete.")
+        
         logging.info(f"{item_top} completed successfully")
 
     
@@ -111,13 +100,19 @@ if __name__ == "__main__":
     fee_index = 0
     print('Updating worksheet')
     for item in items_dictionary:
-        print(f"Updating {item}")
         start_index += 1
         start_point_a = ('A', start_index)
         #start_point_a = sheets_handling.get_next_empty_cell('A')
         sheets_handling.update_row(item,items_dictionary[item], start_point_a, fee_list[fee_index])
         fee_index += 1
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
-        print(f"Update {item} complete. Waiting 15.")
         time.sleep(15)
+
+# Main function to run our more purposeful code
+if __name__ == "__main__":
+    
+    # Run our function to update the spreadsheet
+    update_items()
+    
+    # Additional actions will be performed from here referring to this sheet of data.
     logging.info("Program successfully completed operation")
