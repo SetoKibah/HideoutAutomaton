@@ -101,11 +101,13 @@ if __name__ == "__main__":
     fee_index = 0
     print('Updating worksheet')
     for item in items_dictionary:
+        print(f"Updating {item}")
         start_index += 1
         start_point_a = ('A', start_index)
         #start_point_a = sheets_handling.get_next_empty_cell('A')
         sheets_handling.update_row(item,items_dictionary[item], start_point_a, fee_list[fee_index])
         fee_index += 1
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
+        print(f"Update {item} complete. Waiting 15.")
         time.sleep(15)
     logging.info("Program successfully completed operation")
