@@ -30,14 +30,11 @@ components_list = ['ai-2 medkit', 'aseptic bandage', 'augmentin antibiotic pills
                 'can of max energy drink', 'pile of meds', 'ibuprofen painkillers', 'golden star balm', 'analgin painkillers', 'calok-b hemostatic applicator',
                 'esmarch tourniquet', 'army bandage', 'power supply unit', 'dvd drive', 'gas analyzer', '5.45x39mm PS gs', 'bolts', 'kite', 'molot vpo-209 .366 tkm carbine']
 
-<<<<<<< HEAD
-=======
 # Create a progress bar so we know what we're doing
 def progress_bar(progress, total):
     percent = 100 * (progress / float(total))
     bar = '█' * int(percent) + ' ' * (100 - int(percent))
     print(f"\r|{bar}| {percent:.2f}%", end="\r")
->>>>>>> 852108a1e3365c63190034d391d31a46717ca587
 
 # Function to send query out
 def run_query(query):
@@ -107,17 +104,11 @@ def update_items():
     # Is not made available to general public. If wanted, create your own keys and give same file name.
     # Index tracking for updating our rows 
     fee_index = 0
-<<<<<<< HEAD
-    start_index = 1
-    print('Updating worksheet')
-    for item in items_dictionary:
-=======
     print('\nUpdating worksheet')
     progress_bar(0, len(items_dictionary))
     for index, item in enumerate(items_dictionary):
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
         time.sleep(15)
->>>>>>> 852108a1e3365c63190034d391d31a46717ca587
         start_index += 1
         start_point_a = ('A', start_index)
         #start_point_a = sheets_handling.get_next_empty_cell('A')
