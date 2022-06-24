@@ -104,6 +104,7 @@ def update_items():
     # Is not made available to general public. If wanted, create your own keys and give same file name.
     # Index tracking for updating our rows 
     fee_index = 0
+    start_index = 1
     print('\nUpdating worksheet')
     progress_bar(0, len(items_dictionary))
     for index, item in enumerate(items_dictionary):
