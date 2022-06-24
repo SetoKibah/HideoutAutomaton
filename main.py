@@ -2,12 +2,11 @@
 # Utilize: API with https://tarkov.dev/ and create our own database.
 
 # imports
-from time import time
 import requests
 import logging
 import sheets_handling
 import time
-import progressbar
+import math
 
 # Setup basic logging configuration
 logging.basicConfig(level=logging.INFO, filename="Automaton.log", filemode="w",
@@ -30,6 +29,12 @@ components_list = ['ai-2 medkit', 'aseptic bandage', 'augmentin antibiotic pills
                 'kektape duct tape', 'gas mask air filter', 'fleece fabric', 'printer paper', 'zagustin hemostatic drug injector', 'morphine injector',
                 'can of max energy drink', 'pile of meds', 'ibuprofen painkillers', 'golden star balm', 'analgin painkillers', 'calok-b hemostatic applicator',
                 'esmarch tourniquet', 'army bandage', 'power supply unit', 'dvd drive', 'gas analyzer', '5.45x39mm PS gs', 'bolts', 'kite', 'molot vpo-209 .366 tkm carbine']
+
+# Create a progress bar so we know what we're doing
+def progress_bar(progress, total):
+    percent = 100 * (progress / float(total))
+    bar = '█' * int(percent) + ' ' * (100 - int(percent))
+    print(f"\r|{bar}| {percent:.2f}%", end="\r")
 
 # Function to send query out
 def run_query(query):
@@ -70,8 +75,10 @@ def update_items():
     # Testing list items comprehension with more pertinent information to take
     items_dictionary = {}
     fee_list = []
-    
-    for item_top in items_list:
+
+    print('Update items...')
+    progress_bar(0, len(items_list))
+    for index, item_top in enumerate(items_list):
         logging.info(f"Testing for item query of {item_top}")
         trimmed_result = query_send_receive(item_top)
 
@@ -88,6 +95,7 @@ def update_items():
                 highest_source = item['source']
                 highest_price = item['price']
                 items_dictionary[item_top] = item['price']
+        progress_bar(index + 1, len(items_list))
         
         logging.info(f"{item_top} completed successfully")
 
@@ -98,15 +106,18 @@ def update_items():
     # Index tracking for updating fees rows 
     start_index = 1
     fee_index = 0
-    print('Updating worksheet')
-    for item in items_dictionary:
+    print('\nUpdating worksheet')
+    progress_bar(0, len(items_dictionary))
+    for index, item in enumerate(items_dictionary):
+        # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
+        time.sleep(15)
         start_index += 1
         start_point_a = ('A', start_index)
         #start_point_a = sheets_handling.get_next_empty_cell('A')
         sheets_handling.update_row(item,items_dictionary[item], start_point_a, fee_list[fee_index])
         fee_index += 1
-        # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
-        time.sleep(15)
+        progress_bar(index + 1, len(items_dictionary))
+        
 
 # Main function to run our more purposeful code
 if __name__ == "__main__":
