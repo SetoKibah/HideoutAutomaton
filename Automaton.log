@@ -1,1 +1,404 @@
-
+2022-06-21 14:20:37,826 0 DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2022-06-21 14:20:37,848 0 DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2022-06-21 14:20:37,850 0 DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2022-06-21 14:20:38,061 0 DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2022-06-21 14:20:38,063 0 DEBUG - Starting new HTTPS connection (1): www.googleapis.com:443
+2022-06-21 14:20:38,665 0 DEBUG - https://www.googleapis.com:443 "GET /drive/v3/files?q=mimeType%3D%22application%2Fvnd.google-apps.spreadsheet%22+and+name+%3D+%22General+Budgeting%22&pageSize=1000&supportsAllDrives=True&includeItemsFromAllDrives=True&fields=kind%2CnextPageToken%2Cfiles%28id%2Cname%2CcreatedTime%2CmodifiedTime%29 HTTP/1.1" 200 None
+2022-06-21 14:20:38,667 0 DEBUG - Starting new HTTPS connection (1): sheets.googleapis.com:443
+2022-06-21 14:20:39,253 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0?includeGridData=false HTTP/1.1" 200 None
+2022-06-21 14:20:39,551 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0?includeGridData=false HTTP/1.1" 200 None
+2022-06-21 14:20:39,551 0 INFO - Google sheets authentication successful
+2022-06-21 14:20:39,552 0 INFO - Testing for item query of pile of meds
+2022-06-21 14:20:39,553 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:41,087 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:41,088 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Pile of meds', 'shortName': 'Meds', 'avg24hPrice': 24149, 'lastLowPrice': 35000, 'low24hPrice': 14420, 'high24hPrice': 200000, 'basePrice': 6500, 'fleaMarketFee': 18083, 'sellFor': [{'price': 3250, 'source': 'prapor'}, {'price': 4095, 'source': 'therapist'}, {'price': 2600, 'source': 'fence'}, {'price': 3185, 'source': 'skier'}, {'price': 35000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:41,089 0 INFO - pile of meds completed successfully
+2022-06-21 14:20:41,089 0 INFO - Testing for item query of shampoo
+2022-06-21 14:20:41,090 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:42,471 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:42,472 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Schaman shampoo', 'shortName': 'Shampoo', 'avg24hPrice': 54187, 'lastLowPrice': 50000, 'low24hPrice': 34444, 'high24hPrice': 98888, 'basePrice': 7000, 'fleaMarketFee': 30767, 'sellFor': [{'price': 3500, 'source': 'prapor'}, {'price': 4410, 'source': 'therapist'}, {'price': 2800, 'source': 'fence'}, {'price': 3430, 'source': 'skier'}, {'price': 50000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:42,472 0 INFO - shampoo completed successfully
+2022-06-21 14:20:42,473 0 INFO - Testing for item query of slickers
+2022-06-21 14:20:42,474 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:43,865 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:43,866 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Slickers chocolate bar', 'shortName': 'Slickers', 'avg24hPrice': 19322, 'lastLowPrice': 16999, 'low24hPrice': 15000, 'high24hPrice': 35555, 'basePrice': 2265, 'fleaMarketFee': 10791, 'sellFor': [{'price': 1427, 'source': 'therapist'}, {'price': 906, 'source': 'fence'}, {'price': 1359, 'source': 'jaeger'}, {'price': 16999, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:43,867 0 INFO - slickers completed successfully
+2022-06-21 14:20:43,867 0 INFO - Testing for item query of wires
+2022-06-21 14:20:43,868 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:45,226 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:45,227 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bundle of wires', 'shortName': 'Wires', 'avg24hPrice': 12698, 'lastLowPrice': 9420, 'low24hPrice': 8500, 'high24hPrice': 14998, 'basePrice': 7400, 'fleaMarketFee': 2597, 'sellFor': [{'price': 4662, 'source': 'therapist'}, {'price': 2960, 'source': 'fence'}, {'price': 3626, 'source': 'skier'}, {'price': 35, 'source': 'peacekeeper'}, {'price': 4144, 'source': 'mechanic'}, {'price': 9420, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:45,227 0 INFO - wires completed successfully
+2022-06-21 14:20:45,228 0 INFO - Testing for item query of sj6
+2022-06-21 14:20:45,229 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:48,033 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:48,035 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'SJ6 TGLabs combat stimulant injector', 'shortName': 'SJ6', 'avg24hPrice': 97696, 'lastLowPrice': 89420, 'low24hPrice': 74777, 'high24hPrice': 269369, 'basePrice': 21500, 'fleaMarketFee': 39620, 'sellFor': [{'price': 10750, 'source': 'prapor'}, {'price': 13545, 'source': 'therapist'}, {'price': 8600, 'source': 'fence'}, {'price': 12900, 'source': 'jaeger'}, {'price': 89420, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:48,035 0 INFO - sj6 completed successfully
+2022-06-21 14:20:48,036 0 INFO - Testing for item query of 9x19mm rip
+2022-06-21 14:20:48,037 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:49,507 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:49,508 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x19mm RIP', 'shortName': 'RIP', 'avg24hPrice': 1871, 'lastLowPrice': 1898, 'low24hPrice': 955, 'high24hPrice': 18888, 'basePrice': 385, 'fleaMarketFee': 930, 'sellFor': [{'price': 154, 'source': 'fence'}, {'price': 193, 'source': 'prapor'}, {'price': 216, 'source': 'mechanic'}, {'price': 1898, 'source': 'fleaMarket'}]}, {'name': '9x19mm RIP 20 pcs. ammo box', 'shortName': 'RIP', 'avg24hPrice': 0, 'lastLowPrice': 20000, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 23989, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 20000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:49,508 0 INFO - 9x19mm rip completed successfully
+2022-06-21 14:20:49,509 0 INFO - Testing for item query of eagle
+2022-06-21 14:20:49,510 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:49,875 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:49,876 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Gunpowder "Eagle"', 'shortName': 'Eagle', 'avg24hPrice': 69921, 'lastLowPrice': 58999, 'low24hPrice': 40000, 'high24hPrice': 100000, 'basePrice': 32000, 'fleaMarketFee': 17605, 'sellFor': [{'price': 16000, 'source': 'prapor'}, {'price': 20160, 'source': 'therapist'}, {'price': 12800, 'source': 'fence'}, {'price': 15680, 'source': 'skier'}, {'price': 58999, 'source': 'fleaMarket'}]}, {'name': 'Eagle Industries MMAC plate carrier (Ranger Green)', 'shortName': 'MMAC', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 60000, 'fleaMarketFee': None, 'sellFor': [{'price': 30000, 'source': 'prapor'}, {'price': 24000, 'source': 'fence'}, {'price': 29400, 'source': 'skier'}, {'price': 281, 'source': 'peacekeeper'}, {'price': 37200, 'source': 'ragman'}, {'price': 36000, 'source': 'jaeger'}]}]}}
+2022-06-21 14:20:49,876 0 INFO - eagle completed successfully
+2022-06-21 14:20:49,877 0 INFO - Testing for item query of can of max energy
+2022-06-21 14:20:49,878 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:51,410 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:51,412 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Max Energy energy drink', 'shortName': 'MaxEnergy', 'avg24hPrice': 22555, 'lastLowPrice': 16499, 'low24hPrice': 16499, 'high24hPrice': 35000, 'basePrice': 2934, 'fleaMarketFee': 8753, 'sellFor': [{'price': 1848, 'source': 'therapist'}, {'price': 1174, 'source': 'fence'}, {'price': 1760, 'source': 'jaeger'}, {'price': 16499, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:51,412 0 INFO - can of max energy completed successfully
+2022-06-21 14:20:51,412 0 INFO - Testing for item query of scav backpack
+2022-06-21 14:20:51,413 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:52,602 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:52,603 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Scav backpack', 'shortName': 'ScavBP', 'avg24hPrice': 23754, 'lastLowPrice': 29000, 'low24hPrice': 17569, 'high24hPrice': 40000, 'basePrice': 17994, 'fleaMarketFee': 8314, 'sellFor': [{'price': 7198, 'source': 'fence'}, {'price': 8817, 'source': 'skier'}, {'price': 11156, 'source': 'ragman'}, {'price': 10796, 'source': 'jaeger'}, {'price': 29000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:52,603 0 INFO - scav backpack completed successfully
+2022-06-21 14:20:52,604 0 INFO - Testing for item query of canister with purified water
+2022-06-21 14:20:52,605 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:53,971 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:53,972 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Canister with purified water', 'shortName': 'Superwater', 'avg24hPrice': 68341, 'lastLowPrice': 66000, 'low24hPrice': 58499, 'high24hPrice': 79000, 'basePrice': 50000, 'fleaMarketFee': 18248, 'sellFor': [{'price': 31500, 'source': 'therapist'}, {'price': 20000, 'source': 'fence'}, {'price': 30000, 'source': 'jaeger'}, {'price': 66000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:53,972 0 INFO - canister with purified water completed successfully
+2022-06-21 14:20:53,973 0 INFO - Testing for item query of bottle of water
+2022-06-21 14:20:53,974 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:55,303 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:55,305 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'shortName': 'Water', 'avg24hPrice': 13816, 'lastLowPrice': 12500, 'low24hPrice': 12400, 'high24hPrice': 26000, 'basePrice': 2450, 'fleaMarketFee': 6251, 'sellFor': [{'price': 1544, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12500, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:55,305 0 INFO - bottle of water completed successfully
+2022-06-21 14:20:55,305 0 INFO - Testing for item query of cms surgical kit
+2022-06-21 14:20:55,306 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:57,217 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:57,218 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'CMS surgical kit', 'shortName': 'CMS', 'avg24hPrice': 35994, 'lastLowPrice': 28999, 'low24hPrice': 26000, 'high24hPrice': 55555, 'basePrice': 22500, 'fleaMarketFee': 8001, 'sellFor': [{'price': 11250, 'source': 'prapor'}, {'price': 14175, 'source': 'therapist'}, {'price': 9000, 'source': 'fence'}, {'price': 105, 'source': 'peacekeeper'}, {'price': 13950, 'source': 'ragman'}, {'price': 13500, 'source': 'jaeger'}, {'price': 28999, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:57,218 0 INFO - cms surgical kit completed successfully
+2022-06-21 14:20:57,219 0 INFO - Testing for item query of Can of Hot Rod energy drink
+2022-06-21 14:20:57,220 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:20:58,653 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:20:58,654 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Hot Rod energy drink', 'shortName': 'Hot Rod', 'avg24hPrice': 15237, 'lastLowPrice': 17766, 'low24hPrice': 11000, 'high24hPrice': 42420, 'basePrice': 4236, 'fleaMarketFee': 7910, 'sellFor': [{'price': 2669, 'source': 'therapist'}, {'price': 1694, 'source': 'fence'}, {'price': 2542, 'source': 'jaeger'}, {'price': 17766, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:20:58,654 0 INFO - Can of Hot Rod energy drink completed successfully
+2022-06-21 14:20:58,655 0 INFO - Testing for item query of ox bleach
+2022-06-21 14:20:58,656 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:00,239 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:00,240 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Ox bleach', 'shortName': 'Bleach', 'avg24hPrice': 27835, 'lastLowPrice': 36420, 'low24hPrice': 14000, 'high24hPrice': 54999, 'basePrice': 5988, 'fleaMarketFee': 20275, 'sellFor': [{'price': 2994, 'source': 'prapor'}, {'price': 3772, 'source': 'therapist'}, {'price': 2395, 'source': 'fence'}, {'price': 2934, 'source': 'skier'}, {'price': 36420, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:00,240 0 INFO - ox bleach completed successfully
+2022-06-21 14:21:00,241 0 INFO - Testing for item query of secure flash drive
+2022-06-21 14:21:00,242 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:00,412 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:00,414 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Secure Flash drive', 'shortName': 'Flash drive', 'avg24hPrice': 50040, 'lastLowPrice': 37000, 'low24hPrice': 33000, 'high24hPrice': 55000, 'basePrice': 40152, 'fleaMarketFee': 10445, 'sellFor': [{'price': 16061, 'source': 'fence'}, {'price': 188, 'source': 'peacekeeper'}, {'price': 37000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:00,414 0 INFO - secure flash drive completed successfully
+2022-06-21 14:21:00,414 0 INFO - Testing for item query of aramid fiber fabric
+2022-06-21 14:21:00,415 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:01,927 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:01,929 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aramid fiber fabric', 'shortName': 'Aramid', 'avg24hPrice': 65176, 'lastLowPrice': 48884, 'low24hPrice': 22222, 'high24hPrice': 229999, 'basePrice': 8800, 'fleaMarketFee': 25740, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 48884, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:01,929 0 INFO - aramid fiber fabric completed successfully
+2022-06-21 14:21:01,929 0 INFO - Testing for item query of vodka
+2022-06-21 14:21:01,930 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:02,336 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:02,337 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of Tarkovskaya vodka', 'shortName': 'Vodka', 'avg24hPrice': 30186, 'lastLowPrice': 18000, 'low24hPrice': 18000, 'high24hPrice': 129999, 'basePrice': 25000, 'fleaMarketFee': 5471, 'sellFor': [{'price': 15750, 'source': 'therapist'}, {'price': 10000, 'source': 'fence'}, {'price': 15000, 'source': 'jaeger'}, {'price': 12500, 'source': 'prapor'}, {'price': 18000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:02,338 0 INFO - vodka completed successfully
+2022-06-21 14:21:02,338 0 INFO - Testing for item query of wilston cigarettes
+2022-06-21 14:21:02,339 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:02,512 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:02,514 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Wilston cigarettes', 'shortName': 'Wilston', 'avg24hPrice': 12312, 'lastLowPrice': 9500, 'low24hPrice': 7500, 'high24hPrice': 24999, 'basePrice': 7984, 'fleaMarketFee': 2613, 'sellFor': [{'price': 3992, 'source': 'prapor'}, {'price': 5030, 'source': 'therapist'}, {'price': 3194, 'source': 'fence'}, {'price': 3912, 'source': 'skier'}, {'price': 9500, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:02,514 0 INFO - wilston cigarettes completed successfully
+2022-06-21 14:21:02,514 0 INFO - Testing for item query of bottle of water
+2022-06-21 14:21:02,515 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:02,950 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:02,951 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'shortName': 'Water', 'avg24hPrice': 13816, 'lastLowPrice': 12500, 'low24hPrice': 12400, 'high24hPrice': 26000, 'basePrice': 2450, 'fleaMarketFee': 6251, 'sellFor': [{'price': 1544, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12500, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:02,951 0 INFO - bottle of water completed successfully
+2022-06-21 14:21:02,952 0 INFO - Testing for item query of emergency water ration
+2022-06-21 14:21:02,953 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:04,960 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:04,961 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Emergency Water Ration', 'shortName': 'EWR', 'avg24hPrice': 34214, 'lastLowPrice': 28123, 'low24hPrice': 18000, 'high24hPrice': 50415, 'basePrice': 7200, 'fleaMarketFee': 12019, 'sellFor': [{'price': 4536, 'source': 'therapist'}, {'price': 2880, 'source': 'fence'}, {'price': 4320, 'source': 'jaeger'}, {'price': 28123, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:04,961 0 INFO - emergency water ration completed successfully
+2022-06-21 14:21:04,962 0 INFO - Testing for item query of aquamari water bottle
+2022-06-21 14:21:04,963 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:05,305 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:05,306 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aquamari water bottle with filter', 'shortName': 'Aquamari', 'avg24hPrice': 48575, 'lastLowPrice': 44999, 'low24hPrice': 30000, 'high24hPrice': 300000, 'basePrice': 8600, 'fleaMarketFee': 22848, 'sellFor': [{'price': 5418, 'source': 'therapist'}, {'price': 3440, 'source': 'fence'}, {'price': 5160, 'source': 'jaeger'}, {'price': 44999, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:05,306 0 INFO - aquamari water bottle completed successfully
+2022-06-21 14:21:05,307 0 INFO - Testing for item query of aseptic bandage
+2022-06-21 14:21:05,308 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:05,680 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:05,681 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aseptic bandage', 'shortName': 'Bandage', 'avg24hPrice': 1980, 'lastLowPrice': 2000, 'low24hPrice': 1948, 'high24hPrice': 2030, 'basePrice': 1300, 'fleaMarketFee': 567, 'sellFor': [{'price': 650, 'source': 'prapor'}, {'price': 819, 'source': 'therapist'}, {'price': 520, 'source': 'fence'}, {'price': 6, 'source': 'peacekeeper'}, {'price': 806, 'source': 'ragman'}, {'price': 780, 'source': 'jaeger'}, {'price': 2000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:05,682 0 INFO - aseptic bandage completed successfully
+2022-06-21 14:21:05,682 0 INFO - Testing for item query of toilet paper
+2022-06-21 14:21:05,683 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:06,039 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:06,041 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Toilet paper', 'shortName': 'TP', 'avg24hPrice': 12567, 'lastLowPrice': 14999, 'low24hPrice': 4000, 'high24hPrice': 60000, 'basePrice': 8800, 'fleaMarketFee': 4366, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 14999, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:06,041 0 INFO - toilet paper completed successfully
+2022-06-21 14:21:06,042 0 INFO - Testing for item query of m.u.l.e.
+2022-06-21 14:21:06,042 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:07,428 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:07,429 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'M.U.L.E. stimulant injector', 'shortName': 'M.U.L.E.', 'avg24hPrice': 214110, 'lastLowPrice': 188888, 'low24hPrice': 111111, 'high24hPrice': 400000, 'basePrice': 33500, 'fleaMarketFee': 100368, 'sellFor': [{'price': 16750, 'source': 'prapor'}, {'price': 21105, 'source': 'therapist'}, {'price': 13400, 'source': 'fence'}, {'price': 20100, 'source': 'jaeger'}, {'price': 188888, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:07,429 0 INFO - m.u.l.e. completed successfully
+2022-06-21 14:21:07,430 0 INFO - Testing for item query of propital
+2022-06-21 14:21:07,431 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:09,551 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:09,552 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Propital regenerative stimulant injector', 'shortName': 'Propital', 'avg24hPrice': 65285, 'lastLowPrice': 67420, 'low24hPrice': 41111, 'high24hPrice': 119999, 'basePrice': 16200, 'fleaMarketFee': 29884, 'sellFor': [{'price': 8100, 'source': 'prapor'}, {'price': 10206, 'source': 'therapist'}, {'price': 6480, 'source': 'fence'}, {'price': 9720, 'source': 'jaeger'}, {'price': 67420, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:09,552 0 INFO - propital completed successfully
+2022-06-21 14:21:09,553 0 INFO - Testing for item query of salewa
+2022-06-21 14:21:09,554 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:11,616 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:11,617 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Salewa first aid kit', 'shortName': 'Salewa', 'avg24hPrice': 33904, 'lastLowPrice': 33555, 'low24hPrice': 23111, 'high24hPrice': 55555, 'basePrice': 11789, 'fleaMarketFee': 12081, 'sellFor': [{'price': 5895, 'source': 'prapor'}, {'price': 7427, 'source': 'therapist'}, {'price': 4716, 'source': 'fence'}, {'price': 7073, 'source': 'jaeger'}, {'price': 33555, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:11,617 0 INFO - salewa completed successfully
+2022-06-21 14:21:11,618 0 INFO - Testing for item query of ifak
+2022-06-21 14:21:11,619 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:13,864 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:13,865 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'IFAK individual first aid kit', 'shortName': 'IFAK', 'avg24hPrice': 28182, 'lastLowPrice': 26500, 'low24hPrice': 15999, 'high24hPrice': 34997, 'basePrice': 14852, 'fleaMarketFee': 7823, 'sellFor': [{'price': 7426, 'source': 'prapor'}, {'price': 9357, 'source': 'therapist'}, {'price': 5941, 'source': 'fence'}, {'price': 8911, 'source': 'jaeger'}, {'price': 26500, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:13,865 0 INFO - ifak completed successfully
+2022-06-21 14:21:13,866 0 INFO - Testing for item query of capacitors
+2022-06-21 14:21:13,867 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:15,132 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:15,133 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Capacitors', 'shortName': 'Caps', 'avg24hPrice': 16339, 'lastLowPrice': 7500, 'low24hPrice': 7500, 'high24hPrice': 30990, 'basePrice': 2500, 'fleaMarketFee': 2774, 'sellFor': [{'price': 1575, 'source': 'therapist'}, {'price': 1000, 'source': 'fence'}, {'price': 1225, 'source': 'skier'}, {'price': 12, 'source': 'peacekeeper'}, {'price': 1400, 'source': 'mechanic'}, {'price': 7500, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:15,133 0 INFO - capacitors completed successfully
+2022-06-21 14:21:15,134 0 INFO - Testing for item query of printed circuit board
+2022-06-21 14:21:15,135 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:16,537 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:16,539 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Printed circuit board', 'shortName': 'PCB', 'avg24hPrice': 28354, 'lastLowPrice': 17000, 'low24hPrice': 12999, 'high24hPrice': 100000, 'basePrice': 12749, 'fleaMarketFee': 4705, 'sellFor': [{'price': 8032, 'source': 'therapist'}, {'price': 5100, 'source': 'fence'}, {'price': 6247, 'source': 'skier'}, {'price': 60, 'source': 'peacekeeper'}, {'price': 7139, 'source': 'mechanic'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:16,539 0 INFO - printed circuit board completed successfully
+2022-06-21 14:21:16,540 0 INFO - Testing for item query of 5.45x39mm pp
+2022-06-21 14:21:16,541 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:18,063 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:18,064 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '5.45x39mm PP gs', 'shortName': 'PP', 'avg24hPrice': 350, 'lastLowPrice': 450, 'low24hPrice': 150, 'high24hPrice': 1000, 'basePrice': 108, 'fleaMarketFee': 200, 'sellFor': [{'price': 43, 'source': 'fence'}, {'price': 54, 'source': 'prapor'}, {'price': 60, 'source': 'mechanic'}, {'price': 450, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (120 pcs)', 'shortName': 'PP', 'avg24hPrice': 0, 'lastLowPrice': 16000, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 16562, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 16000, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (30 pcs)', 'shortName': 'PP', 'avg24hPrice': 0, 'lastLowPrice': 3999, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 1732, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 3999, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PPBS gs "Igolnik"', 'shortName': 'PPBS', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 562, 'fleaMarketFee': None, 'sellFor': [{'price': 225, 'source': 'fence'}, {'price': 281, 'source': 'prapor'}, {'price': 315, 'source': 'mechanic'}]}, {'name': '5.45x39mm PPBS gs "Igolnik" ammo pack (30 pcs)', 'shortName': 'PPBS', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 280, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:18,064 0 INFO - 5.45x39mm pp completed successfully
+2022-06-21 14:21:18,065 0 INFO - Testing for item query of 9x18mm PM Rg028
+2022-06-21 14:21:18,066 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:18,452 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:18,453 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x18mm PM RG028 gzh', 'shortName': 'RG028', 'avg24hPrice': 225, 'lastLowPrice': 250, 'low24hPrice': 190, 'high24hPrice': 499, 'basePrice': 78, 'fleaMarketFee': 96, 'sellFor': [{'price': 31, 'source': 'fence'}, {'price': 39, 'source': 'prapor'}, {'price': 44, 'source': 'mechanic'}, {'price': 250, 'source': 'fleaMarket'}]}, {'name': '9x18mm PM RG028 gzh ammo pack (16 pcs)', 'shortName': 'RG028', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 280, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:18,454 0 INFO - 9x18mm PM Rg028 completed successfully
+2022-06-21 14:21:18,454 0 INFO - Testing for item query of weapon parts
+2022-06-21 14:21:18,455 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-06-21 14:21:18,806 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-06-21 14:21:18,807 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Weapon parts', 'shortName': 'WParts', 'avg24hPrice': 33162, 'lastLowPrice': 25555, 'low24hPrice': 20000, 'high24hPrice': 100000, 'basePrice': 14240, 'fleaMarketFee': 7558, 'sellFor': [{'price': 7120, 'source': 'prapor'}, {'price': 8971, 'source': 'therapist'}, {'price': 5696, 'source': 'fence'}, {'price': 6978, 'source': 'skier'}, {'price': 25555, 'source': 'fleaMarket'}]}]}}
+2022-06-21 14:21:18,807 0 INFO - weapon parts completed successfully
+2022-06-21 14:21:18,808 0 INFO - Update row action start
+2022-06-21 14:21:19,436 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:19,743 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:20,642 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:20,973 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:21,265 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:21,552 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F2?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:21:21,553 0 INFO - Update row action complete
+2022-06-21 14:21:36,556 0 INFO - Update row action start
+2022-06-21 14:21:36,774 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A3?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:36,977 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B3?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:37,267 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C3?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:37,554 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D3?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:37,959 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E3?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:38,160 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F3?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:21:38,161 0 INFO - Update row action complete
+2022-06-21 14:21:53,166 0 INFO - Update row action start
+2022-06-21 14:21:53,482 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A4?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:53,767 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B4?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:54,050 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C4?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:54,358 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D4?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:54,556 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E4?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:21:54,820 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F4?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:21:54,821 0 INFO - Update row action complete
+2022-06-21 14:22:09,826 0 INFO - Update row action start
+2022-06-21 14:22:10,134 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A5?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:10,422 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B5?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:10,721 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C5?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:11,007 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D5?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:11,317 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E5?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:11,892 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F5?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:22:11,892 0 INFO - Update row action complete
+2022-06-21 14:22:26,907 0 INFO - Update row action start
+2022-06-21 14:22:27,127 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A6?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:27,421 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B6?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:27,714 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C6?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:28,047 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D6?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:28,262 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E6?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:28,463 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F6?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:22:28,463 0 INFO - Update row action complete
+2022-06-21 14:22:43,465 0 INFO - Update row action start
+2022-06-21 14:22:43,681 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A7?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:43,969 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B7?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:44,171 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C7?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:44,460 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D7?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:44,744 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E7?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:22:44,947 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F7?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:22:44,947 0 INFO - Update row action complete
+2022-06-21 14:22:59,957 0 INFO - Update row action start
+2022-06-21 14:23:00,253 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A8?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:00,461 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B8?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:00,658 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C8?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:00,957 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D8?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:01,247 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E8?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:01,560 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F8?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:23:01,560 0 INFO - Update row action complete
+2022-06-21 14:23:16,560 0 INFO - Update row action start
+2022-06-21 14:23:16,989 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A9?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:17,277 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B9?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:17,482 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C9?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:17,798 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D9?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:18,101 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E9?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:18,394 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F9?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:23:18,394 0 INFO - Update row action complete
+2022-06-21 14:23:33,399 0 INFO - Update row action start
+2022-06-21 14:23:33,709 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A10?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:33,914 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B10?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:34,110 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C10?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:34,315 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D10?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:34,511 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E10?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:34,801 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F10?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:23:34,802 0 INFO - Update row action complete
+2022-06-21 14:23:49,804 0 INFO - Update row action start
+2022-06-21 14:23:50,118 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A11?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:50,324 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B11?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:50,519 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C11?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:50,711 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D11?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:50,905 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E11?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:23:51,105 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F11?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:23:51,105 0 INFO - Update row action complete
+2022-06-21 14:24:06,107 0 INFO - Update row action start
+2022-06-21 14:24:06,327 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A12?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:06,522 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B12?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:06,724 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C12?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:06,922 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D12?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:07,222 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E12?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:07,424 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F12?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:24:07,425 0 INFO - Update row action complete
+2022-06-21 14:24:22,437 0 INFO - Update row action start
+2022-06-21 14:24:22,646 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A13?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:22,935 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B13?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:23,136 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C13?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:23,334 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D13?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:23,534 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E13?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:23,832 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F13?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:24:23,833 0 INFO - Update row action complete
+2022-06-21 14:24:38,841 0 INFO - Update row action start
+2022-06-21 14:24:39,164 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A14?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:39,370 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B14?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:39,566 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C14?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:39,763 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D14?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:39,972 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E14?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:40,322 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F14?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:24:40,322 0 INFO - Update row action complete
+2022-06-21 14:24:55,323 0 INFO - Update row action start
+2022-06-21 14:24:55,644 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A15?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:55,837 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B15?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:56,042 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C15?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:56,340 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D15?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:56,543 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E15?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:24:56,745 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F15?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:24:56,746 0 INFO - Update row action complete
+2022-06-21 14:25:11,755 0 INFO - Update row action start
+2022-06-21 14:25:12,065 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A16?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:12,263 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B16?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:12,464 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C16?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:12,662 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D16?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:12,964 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E16?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:13,166 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F16?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:25:13,167 0 INFO - Update row action complete
+2022-06-21 14:25:28,179 0 INFO - Update row action start
+2022-06-21 14:25:28,397 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A17?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:28,589 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B17?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:28,779 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C17?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:28,981 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D17?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:29,274 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E17?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:29,472 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F17?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:25:29,475 0 INFO - Update row action complete
+2022-06-21 14:25:44,477 0 INFO - Update row action start
+2022-06-21 14:25:44,708 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A18?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:44,999 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B18?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:45,191 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C18?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:45,396 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D18?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:45,706 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E18?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:25:46,023 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F18?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:25:46,023 0 INFO - Update row action complete
+2022-06-21 14:26:01,029 0 INFO - Update row action start
+2022-06-21 14:26:01,245 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A19?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:01,449 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B19?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:01,739 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C19?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:02,030 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D19?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:02,226 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E19?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:02,422 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F19?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:26:02,422 0 INFO - Update row action complete
+2022-06-21 14:26:17,430 0 INFO - Update row action start
+2022-06-21 14:26:17,627 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A20?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:17,821 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B20?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:18,028 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C20?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:18,220 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D20?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:18,411 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E20?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:18,606 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F20?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:26:18,606 0 INFO - Update row action complete
+2022-06-21 14:26:33,613 0 INFO - Update row action start
+2022-06-21 14:26:33,824 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A21?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:34,025 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B21?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:34,223 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C21?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:34,434 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D21?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:34,728 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E21?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:34,932 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F21?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:26:34,933 0 INFO - Update row action complete
+2022-06-21 14:26:49,938 0 INFO - Update row action start
+2022-06-21 14:26:50,139 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A22?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:50,433 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B22?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:50,625 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C22?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:50,909 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D22?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:51,112 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E22?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:26:51,402 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F22?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:26:51,403 0 INFO - Update row action complete
+2022-06-21 14:27:06,411 0 INFO - Update row action start
+2022-06-21 14:27:06,630 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A23?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:06,824 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B23?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:07,029 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C23?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:07,231 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D23?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:07,515 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E23?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:07,713 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F23?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:27:07,716 0 INFO - Update row action complete
+2022-06-21 14:27:22,729 0 INFO - Update row action start
+2022-06-21 14:27:22,962 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A24?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:23,151 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B24?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:23,349 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C24?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:23,552 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D24?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:23,749 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E24?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:23,951 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F24?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:27:23,951 0 INFO - Update row action complete
+2022-06-21 14:27:38,962 0 INFO - Update row action start
+2022-06-21 14:27:39,175 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A25?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:39,366 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B25?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:39,563 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C25?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:39,753 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D25?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:39,971 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E25?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:40,164 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F25?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:27:40,164 0 INFO - Update row action complete
+2022-06-21 14:27:55,167 0 INFO - Update row action start
+2022-06-21 14:27:55,378 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A26?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:55,579 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B26?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:55,778 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C26?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:55,978 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D26?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:56,268 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E26?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:27:56,456 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F26?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:27:56,457 0 INFO - Update row action complete
+2022-06-21 14:28:11,467 0 INFO - Update row action start
+2022-06-21 14:28:11,682 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A27?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:11,914 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B27?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:12,120 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C27?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:12,330 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D27?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:12,616 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E27?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:12,807 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F27?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:28:12,808 0 INFO - Update row action complete
+2022-06-21 14:28:27,821 0 INFO - Update row action start
+2022-06-21 14:28:28,241 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A28?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:28,526 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B28?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:28,729 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C28?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:28,926 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D28?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:29,123 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E28?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:29,352 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F28?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:28:29,353 0 INFO - Update row action complete
+2022-06-21 14:28:44,365 0 INFO - Update row action start
+2022-06-21 14:28:44,580 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A29?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:44,787 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B29?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:45,084 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C29?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:45,366 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D29?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:45,571 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E29?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:28:45,764 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F29?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:28:45,765 0 INFO - Update row action complete
+2022-06-21 14:29:00,769 0 INFO - Update row action start
+2022-06-21 14:29:00,980 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A30?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:29:01,174 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B30?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:29:01,376 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C30?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:29:01,571 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D30?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:29:01,780 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E30?valueInputOption=RAW HTTP/1.1" 200 None
+2022-06-21 14:29:01,977 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F30?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-06-21 14:29:01,977 0 INFO - Update row action complete
+2022-06-21 14:29:16,983 0 INFO - Update row action start
+2022-06-21 14:29:17,752 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A31?valueInputOption=RAW HTTP/1.1" 502 1613
