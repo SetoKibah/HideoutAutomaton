@@ -3,7 +3,7 @@
 
 # imports
 import logging
-import update_sheets
+import bin.update_sheets as update_sheets
 
 
 # Setup basic logging configuration ()
