@@ -13,6 +13,7 @@ This project is designed to take inputs from multiple sources, including the use
   - time
   - datetime
   - gspread
+  - logging
 
 **Note**: pytesseract is a wrapper for the Tesseract OCR, and is not a standalone package. Installation of the Tesseract OCR is required. Example instructions on installation and first-time setup can be found here: https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/
 
