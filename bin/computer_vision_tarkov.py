@@ -64,7 +64,7 @@ def get_money_values():
     screen_array = np.array(screen)
     # Crop region (Note height, width, not sure on 3rd)
     # (Works in a range(like 400:600, or 600:, or :600))
-    cropped_region = screen_array[50:80, 1695:, :]
+    cropped_region = screen_array[50:80, 1640:, :]
     # Corrected Colors
     corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
     information = pytesseract.image_to_string(corrected_colors)
@@ -149,10 +149,13 @@ today_list = today_string.split(' ')
 now = today_list[1]
 today = today_list[0]
 
+# Upload to google sheet
 start = get_next_empty_cell('A')
-wks.update('A3', today)
-wks.update('B3', now)
-wks.update('C3', float(value_list[0][1:]))
-wks.update('D3', float(value_list[1][1:]))
-wks.update('E3', float(value_list[2][1:]))
-wks.update('F3', float(overall_value))
+
+wks.update(f'A{start[1]}', today)
+wks.update(f'B{start[1]}', now)
+wks.update(f'C{start[1]}', float(value_list[0][1:]))
+wks.update(f'D{start[1]}', float(value_list[1][1:]))
+wks.update(f'E{start[1]}', float(value_list[2][1:]))
+wks.update(f'F{start[1]}', float(overall_value))
+
