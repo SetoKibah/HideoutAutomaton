@@ -15,7 +15,11 @@ items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip
             'scav backpack', 'canister with purified water', 'bottle of water', 'cms surgical kit', 'Can of Hot Rod energy drink',
              'ox bleach', 'secure flash drive', 'aramid fiber fabric', 'vodka', 'wilston cigarettes', 'bottle of water', 'emergency water ration',
              'aquamari water bottle', 'aseptic bandage', 'toilet paper', 'm.u.l.e.', 'propital', 'salewa', 'ifak', 'capacitors', 'printed circuit board',
-             '5.45x39mm pp', '9x18mm PM Rg028', 'weapon parts']
+             '5.45x39mm pp', '9x18mm PM Rg028', 'weapon parts', 'car battery', 'nixxor lens', '.366 tkm ap-m', 'kalashnikov ak-74m 5.45x39 assault rifle',
+             '9x18mm pm pbm gzh', 'vog-25', 'can of thermite', '12/70 flechette', 'magnet', 'kite', 'hawk', 'rechargeable battery', 'lucky scav junk box',
+             'ana tactical m1 armored rig', 'magazine case', 'ak-74 5.45x39 6l31 60-round magazine', 'fleece', 'cordura', 'army bandage', 'ripstop fabric',
+             'grizzly medical kit', 'vaseline balm', 'surv12 field surgical kit', 'calok-b hemostatic applicator', 'ai-2 medkit', 'medical bloodset', 
+             'can of condensed milk', 'Bottle of Tarkovskaya vodka']
 
 # A list of components for our tracked items. Will use this to further calculate our true profit after cost of material.
 components_list = ['ai-2 medkit', 'aseptic bandage', 'augmentin antibiotic pills', 'soap', 'bottle of water', 'alyonka', 'pack of oat flakes',
