@@ -56,6 +56,58 @@ def query_send_receive(item_input):
     
     return trimmed_result
 
+def item_price_info(item_in_question):
+    #find price information on an item, thanks Ryry for this
+
+    itemPriceInfo={}
+
+    logging.info(f"Testing for item query of {item_in_question}")
+    trimmed_result = query_send_receive(item_in_question)
+
+    # Separate information to be used (slightly changed)
+    itemPriceInfo['price_list'] = trimmed_result['sellFor']
+    itemPriceInfo['average_price'] = trimmed_result['avg24hPrice']
+    itemPriceInfo['last_low'] = trimmed_result['lastLowPrice']
+    itemPriceInfo['low_past_day'] = trimmed_result['low24hPrice']
+    itemPriceInfo['high_past_day'] = trimmed_result['high24hPrice']
+
+    
+    # Determine highest price
+    highest_price = 0
+    # Iterate through available price data to find the highest available
+    for item in itemPriceInfo['price_list']:
+        if item['price'] > highest_price:
+            highest_source = item['source']
+            highest_price = item['price']
+
+            itemPriceInfo['highest_source'] = highest_source
+            itemPriceInfo['highest_price'] = highest_price
+            itemPriceInfo['item_price'] = item['price']
+
+    logging.info(f"{item_in_question} completed successfully")
+    return itemPriceInfo
+
+def compare_itemprice_componentprice(item_input):
+#     #Find price of item
+#     itemBulkInfo = item_price_info(item_input)
+#     itemPrice = itemBulkInfo['item_price']
+#     #Find price of components together
+#     componentsTotalPrice = 0
+#         #Find out the components of an item
+# #itemComponents finds the list of components that make item_input
+#     components = itemComponents(item_input)
+#     for indvComponent in components:
+#         #Find the price of the component
+#         bulkInfo = item_price_info(indvComponent)
+#         componentPrice = bulkInfo['item_price']
+#         componentsTotalPrice += componentPrice
+#     if componentsTotalPrice > itemPrice:
+#         print('Sell in pieces')
+    
+    
+    pass
+
+
 # Main function to run our more purposeful code
 if __name__ == "__main__":
     
