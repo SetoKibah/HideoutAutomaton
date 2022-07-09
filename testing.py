@@ -85,4 +85,5 @@ def compare_itemprice_componentstotalprice(item_input):
     else:
         print("sell it in components, you get more money")
 
-compare_itemprice_componentstotalprice('slickers')
+if __name__ == "__main__":
+    compare_itemprice_componentstotalprice('slickers')
