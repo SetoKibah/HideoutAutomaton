@@ -24,7 +24,7 @@ def get_next_empty_cell(column):
         if cell == None:
             start_point = (column, i)
             break
-    logging.info(f"start poing for next empty cell {start_point}")
+    logging.info(f"start looking for next empty cell {start_point}")
     return start_point
         
 # Used for updating one cell at a time, applicable for updating a list over time.

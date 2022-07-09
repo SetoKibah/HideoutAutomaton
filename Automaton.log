@@ -1,404 +1,318 @@
-2022-06-21 14:20:37,826 0 DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
-2022-06-21 14:20:37,848 0 DEBUG - Making request: POST https://oauth2.googleapis.com/token
-2022-06-21 14:20:37,850 0 DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
-2022-06-21 14:20:38,061 0 DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
-2022-06-21 14:20:38,063 0 DEBUG - Starting new HTTPS connection (1): www.googleapis.com:443
-2022-06-21 14:20:38,665 0 DEBUG - https://www.googleapis.com:443 "GET /drive/v3/files?q=mimeType%3D%22application%2Fvnd.google-apps.spreadsheet%22+and+name+%3D+%22General+Budgeting%22&pageSize=1000&supportsAllDrives=True&includeItemsFromAllDrives=True&fields=kind%2CnextPageToken%2Cfiles%28id%2Cname%2CcreatedTime%2CmodifiedTime%29 HTTP/1.1" 200 None
-2022-06-21 14:20:38,667 0 DEBUG - Starting new HTTPS connection (1): sheets.googleapis.com:443
-2022-06-21 14:20:39,253 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0?includeGridData=false HTTP/1.1" 200 None
-2022-06-21 14:20:39,551 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0?includeGridData=false HTTP/1.1" 200 None
-2022-06-21 14:20:39,551 0 INFO - Google sheets authentication successful
-2022-06-21 14:20:39,552 0 INFO - Testing for item query of pile of meds
-2022-06-21 14:20:39,553 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:41,087 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:41,088 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Pile of meds', 'shortName': 'Meds', 'avg24hPrice': 24149, 'lastLowPrice': 35000, 'low24hPrice': 14420, 'high24hPrice': 200000, 'basePrice': 6500, 'fleaMarketFee': 18083, 'sellFor': [{'price': 3250, 'source': 'prapor'}, {'price': 4095, 'source': 'therapist'}, {'price': 2600, 'source': 'fence'}, {'price': 3185, 'source': 'skier'}, {'price': 35000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:41,089 0 INFO - pile of meds completed successfully
-2022-06-21 14:20:41,089 0 INFO - Testing for item query of shampoo
-2022-06-21 14:20:41,090 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:42,471 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:42,472 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Schaman shampoo', 'shortName': 'Shampoo', 'avg24hPrice': 54187, 'lastLowPrice': 50000, 'low24hPrice': 34444, 'high24hPrice': 98888, 'basePrice': 7000, 'fleaMarketFee': 30767, 'sellFor': [{'price': 3500, 'source': 'prapor'}, {'price': 4410, 'source': 'therapist'}, {'price': 2800, 'source': 'fence'}, {'price': 3430, 'source': 'skier'}, {'price': 50000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:42,472 0 INFO - shampoo completed successfully
-2022-06-21 14:20:42,473 0 INFO - Testing for item query of slickers
-2022-06-21 14:20:42,474 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:43,865 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:43,866 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Slickers chocolate bar', 'shortName': 'Slickers', 'avg24hPrice': 19322, 'lastLowPrice': 16999, 'low24hPrice': 15000, 'high24hPrice': 35555, 'basePrice': 2265, 'fleaMarketFee': 10791, 'sellFor': [{'price': 1427, 'source': 'therapist'}, {'price': 906, 'source': 'fence'}, {'price': 1359, 'source': 'jaeger'}, {'price': 16999, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:43,867 0 INFO - slickers completed successfully
-2022-06-21 14:20:43,867 0 INFO - Testing for item query of wires
-2022-06-21 14:20:43,868 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:45,226 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:45,227 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bundle of wires', 'shortName': 'Wires', 'avg24hPrice': 12698, 'lastLowPrice': 9420, 'low24hPrice': 8500, 'high24hPrice': 14998, 'basePrice': 7400, 'fleaMarketFee': 2597, 'sellFor': [{'price': 4662, 'source': 'therapist'}, {'price': 2960, 'source': 'fence'}, {'price': 3626, 'source': 'skier'}, {'price': 35, 'source': 'peacekeeper'}, {'price': 4144, 'source': 'mechanic'}, {'price': 9420, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:45,227 0 INFO - wires completed successfully
-2022-06-21 14:20:45,228 0 INFO - Testing for item query of sj6
-2022-06-21 14:20:45,229 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:48,033 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:48,035 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'SJ6 TGLabs combat stimulant injector', 'shortName': 'SJ6', 'avg24hPrice': 97696, 'lastLowPrice': 89420, 'low24hPrice': 74777, 'high24hPrice': 269369, 'basePrice': 21500, 'fleaMarketFee': 39620, 'sellFor': [{'price': 10750, 'source': 'prapor'}, {'price': 13545, 'source': 'therapist'}, {'price': 8600, 'source': 'fence'}, {'price': 12900, 'source': 'jaeger'}, {'price': 89420, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:48,035 0 INFO - sj6 completed successfully
-2022-06-21 14:20:48,036 0 INFO - Testing for item query of 9x19mm rip
-2022-06-21 14:20:48,037 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:49,507 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:49,508 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x19mm RIP', 'shortName': 'RIP', 'avg24hPrice': 1871, 'lastLowPrice': 1898, 'low24hPrice': 955, 'high24hPrice': 18888, 'basePrice': 385, 'fleaMarketFee': 930, 'sellFor': [{'price': 154, 'source': 'fence'}, {'price': 193, 'source': 'prapor'}, {'price': 216, 'source': 'mechanic'}, {'price': 1898, 'source': 'fleaMarket'}]}, {'name': '9x19mm RIP 20 pcs. ammo box', 'shortName': 'RIP', 'avg24hPrice': 0, 'lastLowPrice': 20000, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 23989, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 20000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:49,508 0 INFO - 9x19mm rip completed successfully
-2022-06-21 14:20:49,509 0 INFO - Testing for item query of eagle
-2022-06-21 14:20:49,510 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:49,875 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:49,876 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Gunpowder "Eagle"', 'shortName': 'Eagle', 'avg24hPrice': 69921, 'lastLowPrice': 58999, 'low24hPrice': 40000, 'high24hPrice': 100000, 'basePrice': 32000, 'fleaMarketFee': 17605, 'sellFor': [{'price': 16000, 'source': 'prapor'}, {'price': 20160, 'source': 'therapist'}, {'price': 12800, 'source': 'fence'}, {'price': 15680, 'source': 'skier'}, {'price': 58999, 'source': 'fleaMarket'}]}, {'name': 'Eagle Industries MMAC plate carrier (Ranger Green)', 'shortName': 'MMAC', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 60000, 'fleaMarketFee': None, 'sellFor': [{'price': 30000, 'source': 'prapor'}, {'price': 24000, 'source': 'fence'}, {'price': 29400, 'source': 'skier'}, {'price': 281, 'source': 'peacekeeper'}, {'price': 37200, 'source': 'ragman'}, {'price': 36000, 'source': 'jaeger'}]}]}}
-2022-06-21 14:20:49,876 0 INFO - eagle completed successfully
-2022-06-21 14:20:49,877 0 INFO - Testing for item query of can of max energy
-2022-06-21 14:20:49,878 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:51,410 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:51,412 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Max Energy energy drink', 'shortName': 'MaxEnergy', 'avg24hPrice': 22555, 'lastLowPrice': 16499, 'low24hPrice': 16499, 'high24hPrice': 35000, 'basePrice': 2934, 'fleaMarketFee': 8753, 'sellFor': [{'price': 1848, 'source': 'therapist'}, {'price': 1174, 'source': 'fence'}, {'price': 1760, 'source': 'jaeger'}, {'price': 16499, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:51,412 0 INFO - can of max energy completed successfully
-2022-06-21 14:20:51,412 0 INFO - Testing for item query of scav backpack
-2022-06-21 14:20:51,413 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:52,602 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:52,603 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Scav backpack', 'shortName': 'ScavBP', 'avg24hPrice': 23754, 'lastLowPrice': 29000, 'low24hPrice': 17569, 'high24hPrice': 40000, 'basePrice': 17994, 'fleaMarketFee': 8314, 'sellFor': [{'price': 7198, 'source': 'fence'}, {'price': 8817, 'source': 'skier'}, {'price': 11156, 'source': 'ragman'}, {'price': 10796, 'source': 'jaeger'}, {'price': 29000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:52,603 0 INFO - scav backpack completed successfully
-2022-06-21 14:20:52,604 0 INFO - Testing for item query of canister with purified water
-2022-06-21 14:20:52,605 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:53,971 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:53,972 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Canister with purified water', 'shortName': 'Superwater', 'avg24hPrice': 68341, 'lastLowPrice': 66000, 'low24hPrice': 58499, 'high24hPrice': 79000, 'basePrice': 50000, 'fleaMarketFee': 18248, 'sellFor': [{'price': 31500, 'source': 'therapist'}, {'price': 20000, 'source': 'fence'}, {'price': 30000, 'source': 'jaeger'}, {'price': 66000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:53,972 0 INFO - canister with purified water completed successfully
-2022-06-21 14:20:53,973 0 INFO - Testing for item query of bottle of water
-2022-06-21 14:20:53,974 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:55,303 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:55,305 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'shortName': 'Water', 'avg24hPrice': 13816, 'lastLowPrice': 12500, 'low24hPrice': 12400, 'high24hPrice': 26000, 'basePrice': 2450, 'fleaMarketFee': 6251, 'sellFor': [{'price': 1544, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12500, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:55,305 0 INFO - bottle of water completed successfully
-2022-06-21 14:20:55,305 0 INFO - Testing for item query of cms surgical kit
-2022-06-21 14:20:55,306 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:57,217 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:57,218 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'CMS surgical kit', 'shortName': 'CMS', 'avg24hPrice': 35994, 'lastLowPrice': 28999, 'low24hPrice': 26000, 'high24hPrice': 55555, 'basePrice': 22500, 'fleaMarketFee': 8001, 'sellFor': [{'price': 11250, 'source': 'prapor'}, {'price': 14175, 'source': 'therapist'}, {'price': 9000, 'source': 'fence'}, {'price': 105, 'source': 'peacekeeper'}, {'price': 13950, 'source': 'ragman'}, {'price': 13500, 'source': 'jaeger'}, {'price': 28999, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:57,218 0 INFO - cms surgical kit completed successfully
-2022-06-21 14:20:57,219 0 INFO - Testing for item query of Can of Hot Rod energy drink
-2022-06-21 14:20:57,220 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:20:58,653 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:20:58,654 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Hot Rod energy drink', 'shortName': 'Hot Rod', 'avg24hPrice': 15237, 'lastLowPrice': 17766, 'low24hPrice': 11000, 'high24hPrice': 42420, 'basePrice': 4236, 'fleaMarketFee': 7910, 'sellFor': [{'price': 2669, 'source': 'therapist'}, {'price': 1694, 'source': 'fence'}, {'price': 2542, 'source': 'jaeger'}, {'price': 17766, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:20:58,654 0 INFO - Can of Hot Rod energy drink completed successfully
-2022-06-21 14:20:58,655 0 INFO - Testing for item query of ox bleach
-2022-06-21 14:20:58,656 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:00,239 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:00,240 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Ox bleach', 'shortName': 'Bleach', 'avg24hPrice': 27835, 'lastLowPrice': 36420, 'low24hPrice': 14000, 'high24hPrice': 54999, 'basePrice': 5988, 'fleaMarketFee': 20275, 'sellFor': [{'price': 2994, 'source': 'prapor'}, {'price': 3772, 'source': 'therapist'}, {'price': 2395, 'source': 'fence'}, {'price': 2934, 'source': 'skier'}, {'price': 36420, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:00,240 0 INFO - ox bleach completed successfully
-2022-06-21 14:21:00,241 0 INFO - Testing for item query of secure flash drive
-2022-06-21 14:21:00,242 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:00,412 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:00,414 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Secure Flash drive', 'shortName': 'Flash drive', 'avg24hPrice': 50040, 'lastLowPrice': 37000, 'low24hPrice': 33000, 'high24hPrice': 55000, 'basePrice': 40152, 'fleaMarketFee': 10445, 'sellFor': [{'price': 16061, 'source': 'fence'}, {'price': 188, 'source': 'peacekeeper'}, {'price': 37000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:00,414 0 INFO - secure flash drive completed successfully
-2022-06-21 14:21:00,414 0 INFO - Testing for item query of aramid fiber fabric
-2022-06-21 14:21:00,415 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:01,927 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:01,929 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aramid fiber fabric', 'shortName': 'Aramid', 'avg24hPrice': 65176, 'lastLowPrice': 48884, 'low24hPrice': 22222, 'high24hPrice': 229999, 'basePrice': 8800, 'fleaMarketFee': 25740, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 48884, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:01,929 0 INFO - aramid fiber fabric completed successfully
-2022-06-21 14:21:01,929 0 INFO - Testing for item query of vodka
-2022-06-21 14:21:01,930 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:02,336 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:02,337 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of Tarkovskaya vodka', 'shortName': 'Vodka', 'avg24hPrice': 30186, 'lastLowPrice': 18000, 'low24hPrice': 18000, 'high24hPrice': 129999, 'basePrice': 25000, 'fleaMarketFee': 5471, 'sellFor': [{'price': 15750, 'source': 'therapist'}, {'price': 10000, 'source': 'fence'}, {'price': 15000, 'source': 'jaeger'}, {'price': 12500, 'source': 'prapor'}, {'price': 18000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:02,338 0 INFO - vodka completed successfully
-2022-06-21 14:21:02,338 0 INFO - Testing for item query of wilston cigarettes
-2022-06-21 14:21:02,339 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:02,512 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:02,514 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Wilston cigarettes', 'shortName': 'Wilston', 'avg24hPrice': 12312, 'lastLowPrice': 9500, 'low24hPrice': 7500, 'high24hPrice': 24999, 'basePrice': 7984, 'fleaMarketFee': 2613, 'sellFor': [{'price': 3992, 'source': 'prapor'}, {'price': 5030, 'source': 'therapist'}, {'price': 3194, 'source': 'fence'}, {'price': 3912, 'source': 'skier'}, {'price': 9500, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:02,514 0 INFO - wilston cigarettes completed successfully
-2022-06-21 14:21:02,514 0 INFO - Testing for item query of bottle of water
-2022-06-21 14:21:02,515 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:02,950 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:02,951 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'shortName': 'Water', 'avg24hPrice': 13816, 'lastLowPrice': 12500, 'low24hPrice': 12400, 'high24hPrice': 26000, 'basePrice': 2450, 'fleaMarketFee': 6251, 'sellFor': [{'price': 1544, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12500, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:02,951 0 INFO - bottle of water completed successfully
-2022-06-21 14:21:02,952 0 INFO - Testing for item query of emergency water ration
-2022-06-21 14:21:02,953 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:04,960 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:04,961 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Emergency Water Ration', 'shortName': 'EWR', 'avg24hPrice': 34214, 'lastLowPrice': 28123, 'low24hPrice': 18000, 'high24hPrice': 50415, 'basePrice': 7200, 'fleaMarketFee': 12019, 'sellFor': [{'price': 4536, 'source': 'therapist'}, {'price': 2880, 'source': 'fence'}, {'price': 4320, 'source': 'jaeger'}, {'price': 28123, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:04,961 0 INFO - emergency water ration completed successfully
-2022-06-21 14:21:04,962 0 INFO - Testing for item query of aquamari water bottle
-2022-06-21 14:21:04,963 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:05,305 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:05,306 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aquamari water bottle with filter', 'shortName': 'Aquamari', 'avg24hPrice': 48575, 'lastLowPrice': 44999, 'low24hPrice': 30000, 'high24hPrice': 300000, 'basePrice': 8600, 'fleaMarketFee': 22848, 'sellFor': [{'price': 5418, 'source': 'therapist'}, {'price': 3440, 'source': 'fence'}, {'price': 5160, 'source': 'jaeger'}, {'price': 44999, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:05,306 0 INFO - aquamari water bottle completed successfully
-2022-06-21 14:21:05,307 0 INFO - Testing for item query of aseptic bandage
-2022-06-21 14:21:05,308 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:05,680 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:05,681 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aseptic bandage', 'shortName': 'Bandage', 'avg24hPrice': 1980, 'lastLowPrice': 2000, 'low24hPrice': 1948, 'high24hPrice': 2030, 'basePrice': 1300, 'fleaMarketFee': 567, 'sellFor': [{'price': 650, 'source': 'prapor'}, {'price': 819, 'source': 'therapist'}, {'price': 520, 'source': 'fence'}, {'price': 6, 'source': 'peacekeeper'}, {'price': 806, 'source': 'ragman'}, {'price': 780, 'source': 'jaeger'}, {'price': 2000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:05,682 0 INFO - aseptic bandage completed successfully
-2022-06-21 14:21:05,682 0 INFO - Testing for item query of toilet paper
-2022-06-21 14:21:05,683 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:06,039 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:06,041 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Toilet paper', 'shortName': 'TP', 'avg24hPrice': 12567, 'lastLowPrice': 14999, 'low24hPrice': 4000, 'high24hPrice': 60000, 'basePrice': 8800, 'fleaMarketFee': 4366, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 14999, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:06,041 0 INFO - toilet paper completed successfully
-2022-06-21 14:21:06,042 0 INFO - Testing for item query of m.u.l.e.
-2022-06-21 14:21:06,042 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:07,428 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:07,429 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'M.U.L.E. stimulant injector', 'shortName': 'M.U.L.E.', 'avg24hPrice': 214110, 'lastLowPrice': 188888, 'low24hPrice': 111111, 'high24hPrice': 400000, 'basePrice': 33500, 'fleaMarketFee': 100368, 'sellFor': [{'price': 16750, 'source': 'prapor'}, {'price': 21105, 'source': 'therapist'}, {'price': 13400, 'source': 'fence'}, {'price': 20100, 'source': 'jaeger'}, {'price': 188888, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:07,429 0 INFO - m.u.l.e. completed successfully
-2022-06-21 14:21:07,430 0 INFO - Testing for item query of propital
-2022-06-21 14:21:07,431 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:09,551 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:09,552 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Propital regenerative stimulant injector', 'shortName': 'Propital', 'avg24hPrice': 65285, 'lastLowPrice': 67420, 'low24hPrice': 41111, 'high24hPrice': 119999, 'basePrice': 16200, 'fleaMarketFee': 29884, 'sellFor': [{'price': 8100, 'source': 'prapor'}, {'price': 10206, 'source': 'therapist'}, {'price': 6480, 'source': 'fence'}, {'price': 9720, 'source': 'jaeger'}, {'price': 67420, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:09,552 0 INFO - propital completed successfully
-2022-06-21 14:21:09,553 0 INFO - Testing for item query of salewa
-2022-06-21 14:21:09,554 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:11,616 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:11,617 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Salewa first aid kit', 'shortName': 'Salewa', 'avg24hPrice': 33904, 'lastLowPrice': 33555, 'low24hPrice': 23111, 'high24hPrice': 55555, 'basePrice': 11789, 'fleaMarketFee': 12081, 'sellFor': [{'price': 5895, 'source': 'prapor'}, {'price': 7427, 'source': 'therapist'}, {'price': 4716, 'source': 'fence'}, {'price': 7073, 'source': 'jaeger'}, {'price': 33555, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:11,617 0 INFO - salewa completed successfully
-2022-06-21 14:21:11,618 0 INFO - Testing for item query of ifak
-2022-06-21 14:21:11,619 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:13,864 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:13,865 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'IFAK individual first aid kit', 'shortName': 'IFAK', 'avg24hPrice': 28182, 'lastLowPrice': 26500, 'low24hPrice': 15999, 'high24hPrice': 34997, 'basePrice': 14852, 'fleaMarketFee': 7823, 'sellFor': [{'price': 7426, 'source': 'prapor'}, {'price': 9357, 'source': 'therapist'}, {'price': 5941, 'source': 'fence'}, {'price': 8911, 'source': 'jaeger'}, {'price': 26500, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:13,865 0 INFO - ifak completed successfully
-2022-06-21 14:21:13,866 0 INFO - Testing for item query of capacitors
-2022-06-21 14:21:13,867 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:15,132 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:15,133 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Capacitors', 'shortName': 'Caps', 'avg24hPrice': 16339, 'lastLowPrice': 7500, 'low24hPrice': 7500, 'high24hPrice': 30990, 'basePrice': 2500, 'fleaMarketFee': 2774, 'sellFor': [{'price': 1575, 'source': 'therapist'}, {'price': 1000, 'source': 'fence'}, {'price': 1225, 'source': 'skier'}, {'price': 12, 'source': 'peacekeeper'}, {'price': 1400, 'source': 'mechanic'}, {'price': 7500, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:15,133 0 INFO - capacitors completed successfully
-2022-06-21 14:21:15,134 0 INFO - Testing for item query of printed circuit board
-2022-06-21 14:21:15,135 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:16,537 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:16,539 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Printed circuit board', 'shortName': 'PCB', 'avg24hPrice': 28354, 'lastLowPrice': 17000, 'low24hPrice': 12999, 'high24hPrice': 100000, 'basePrice': 12749, 'fleaMarketFee': 4705, 'sellFor': [{'price': 8032, 'source': 'therapist'}, {'price': 5100, 'source': 'fence'}, {'price': 6247, 'source': 'skier'}, {'price': 60, 'source': 'peacekeeper'}, {'price': 7139, 'source': 'mechanic'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:16,539 0 INFO - printed circuit board completed successfully
-2022-06-21 14:21:16,540 0 INFO - Testing for item query of 5.45x39mm pp
-2022-06-21 14:21:16,541 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:18,063 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:18,064 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '5.45x39mm PP gs', 'shortName': 'PP', 'avg24hPrice': 350, 'lastLowPrice': 450, 'low24hPrice': 150, 'high24hPrice': 1000, 'basePrice': 108, 'fleaMarketFee': 200, 'sellFor': [{'price': 43, 'source': 'fence'}, {'price': 54, 'source': 'prapor'}, {'price': 60, 'source': 'mechanic'}, {'price': 450, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (120 pcs)', 'shortName': 'PP', 'avg24hPrice': 0, 'lastLowPrice': 16000, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 16562, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 16000, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (30 pcs)', 'shortName': 'PP', 'avg24hPrice': 0, 'lastLowPrice': 3999, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 1732, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 3999, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PPBS gs "Igolnik"', 'shortName': 'PPBS', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 562, 'fleaMarketFee': None, 'sellFor': [{'price': 225, 'source': 'fence'}, {'price': 281, 'source': 'prapor'}, {'price': 315, 'source': 'mechanic'}]}, {'name': '5.45x39mm PPBS gs "Igolnik" ammo pack (30 pcs)', 'shortName': 'PPBS', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 280, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:18,064 0 INFO - 5.45x39mm pp completed successfully
-2022-06-21 14:21:18,065 0 INFO - Testing for item query of 9x18mm PM Rg028
-2022-06-21 14:21:18,066 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:18,452 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:18,453 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x18mm PM RG028 gzh', 'shortName': 'RG028', 'avg24hPrice': 225, 'lastLowPrice': 250, 'low24hPrice': 190, 'high24hPrice': 499, 'basePrice': 78, 'fleaMarketFee': 96, 'sellFor': [{'price': 31, 'source': 'fence'}, {'price': 39, 'source': 'prapor'}, {'price': 44, 'source': 'mechanic'}, {'price': 250, 'source': 'fleaMarket'}]}, {'name': '9x18mm PM RG028 gzh ammo pack (16 pcs)', 'shortName': 'RG028', 'avg24hPrice': 0, 'lastLowPrice': None, 'low24hPrice': None, 'high24hPrice': None, 'basePrice': 1000, 'fleaMarketFee': 280, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:18,454 0 INFO - 9x18mm PM Rg028 completed successfully
-2022-06-21 14:21:18,454 0 INFO - Testing for item query of weapon parts
-2022-06-21 14:21:18,455 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
-2022-06-21 14:21:18,806 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
-2022-06-21 14:21:18,807 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Weapon parts', 'shortName': 'WParts', 'avg24hPrice': 33162, 'lastLowPrice': 25555, 'low24hPrice': 20000, 'high24hPrice': 100000, 'basePrice': 14240, 'fleaMarketFee': 7558, 'sellFor': [{'price': 7120, 'source': 'prapor'}, {'price': 8971, 'source': 'therapist'}, {'price': 5696, 'source': 'fence'}, {'price': 6978, 'source': 'skier'}, {'price': 25555, 'source': 'fleaMarket'}]}]}}
-2022-06-21 14:21:18,807 0 INFO - weapon parts completed successfully
-2022-06-21 14:21:18,808 0 INFO - Update row action start
-2022-06-21 14:21:19,436 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A2?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:19,743 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B2?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:20,642 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C2?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:20,973 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D2?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:21,265 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E2?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:21,552 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F2?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:21:21,553 0 INFO - Update row action complete
-2022-06-21 14:21:36,556 0 INFO - Update row action start
-2022-06-21 14:21:36,774 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A3?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:36,977 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B3?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:37,267 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C3?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:37,554 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D3?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:37,959 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E3?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:38,160 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F3?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:21:38,161 0 INFO - Update row action complete
-2022-06-21 14:21:53,166 0 INFO - Update row action start
-2022-06-21 14:21:53,482 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A4?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:53,767 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B4?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:54,050 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C4?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:54,358 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D4?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:54,556 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E4?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:21:54,820 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F4?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:21:54,821 0 INFO - Update row action complete
-2022-06-21 14:22:09,826 0 INFO - Update row action start
-2022-06-21 14:22:10,134 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A5?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:10,422 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B5?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:10,721 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C5?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:11,007 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D5?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:11,317 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E5?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:11,892 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F5?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:22:11,892 0 INFO - Update row action complete
-2022-06-21 14:22:26,907 0 INFO - Update row action start
-2022-06-21 14:22:27,127 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A6?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:27,421 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B6?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:27,714 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C6?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:28,047 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D6?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:28,262 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E6?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:28,463 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F6?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:22:28,463 0 INFO - Update row action complete
-2022-06-21 14:22:43,465 0 INFO - Update row action start
-2022-06-21 14:22:43,681 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A7?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:43,969 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B7?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:44,171 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C7?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:44,460 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D7?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:44,744 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E7?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:22:44,947 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F7?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:22:44,947 0 INFO - Update row action complete
-2022-06-21 14:22:59,957 0 INFO - Update row action start
-2022-06-21 14:23:00,253 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A8?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:00,461 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B8?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:00,658 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C8?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:00,957 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D8?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:01,247 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E8?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:01,560 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F8?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:23:01,560 0 INFO - Update row action complete
-2022-06-21 14:23:16,560 0 INFO - Update row action start
-2022-06-21 14:23:16,989 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A9?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:17,277 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B9?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:17,482 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C9?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:17,798 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D9?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:18,101 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E9?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:18,394 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F9?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:23:18,394 0 INFO - Update row action complete
-2022-06-21 14:23:33,399 0 INFO - Update row action start
-2022-06-21 14:23:33,709 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A10?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:33,914 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B10?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:34,110 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C10?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:34,315 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D10?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:34,511 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E10?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:34,801 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F10?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:23:34,802 0 INFO - Update row action complete
-2022-06-21 14:23:49,804 0 INFO - Update row action start
-2022-06-21 14:23:50,118 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A11?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:50,324 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B11?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:50,519 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C11?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:50,711 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D11?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:50,905 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E11?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:23:51,105 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F11?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:23:51,105 0 INFO - Update row action complete
-2022-06-21 14:24:06,107 0 INFO - Update row action start
-2022-06-21 14:24:06,327 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A12?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:06,522 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B12?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:06,724 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C12?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:06,922 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D12?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:07,222 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E12?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:07,424 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F12?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:24:07,425 0 INFO - Update row action complete
-2022-06-21 14:24:22,437 0 INFO - Update row action start
-2022-06-21 14:24:22,646 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A13?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:22,935 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B13?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:23,136 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C13?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:23,334 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D13?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:23,534 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E13?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:23,832 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F13?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:24:23,833 0 INFO - Update row action complete
-2022-06-21 14:24:38,841 0 INFO - Update row action start
-2022-06-21 14:24:39,164 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A14?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:39,370 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B14?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:39,566 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C14?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:39,763 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D14?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:39,972 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E14?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:40,322 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F14?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:24:40,322 0 INFO - Update row action complete
-2022-06-21 14:24:55,323 0 INFO - Update row action start
-2022-06-21 14:24:55,644 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A15?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:55,837 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B15?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:56,042 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C15?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:56,340 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D15?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:56,543 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E15?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:24:56,745 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F15?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:24:56,746 0 INFO - Update row action complete
-2022-06-21 14:25:11,755 0 INFO - Update row action start
-2022-06-21 14:25:12,065 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A16?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:12,263 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B16?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:12,464 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C16?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:12,662 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D16?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:12,964 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E16?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:13,166 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F16?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:25:13,167 0 INFO - Update row action complete
-2022-06-21 14:25:28,179 0 INFO - Update row action start
-2022-06-21 14:25:28,397 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A17?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:28,589 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B17?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:28,779 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C17?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:28,981 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D17?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:29,274 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E17?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:29,472 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F17?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:25:29,475 0 INFO - Update row action complete
-2022-06-21 14:25:44,477 0 INFO - Update row action start
-2022-06-21 14:25:44,708 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A18?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:44,999 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B18?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:45,191 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C18?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:45,396 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D18?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:45,706 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E18?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:25:46,023 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F18?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:25:46,023 0 INFO - Update row action complete
-2022-06-21 14:26:01,029 0 INFO - Update row action start
-2022-06-21 14:26:01,245 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A19?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:01,449 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B19?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:01,739 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C19?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:02,030 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D19?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:02,226 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E19?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:02,422 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F19?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:26:02,422 0 INFO - Update row action complete
-2022-06-21 14:26:17,430 0 INFO - Update row action start
-2022-06-21 14:26:17,627 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A20?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:17,821 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B20?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:18,028 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C20?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:18,220 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D20?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:18,411 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E20?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:18,606 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F20?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:26:18,606 0 INFO - Update row action complete
-2022-06-21 14:26:33,613 0 INFO - Update row action start
-2022-06-21 14:26:33,824 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A21?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:34,025 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B21?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:34,223 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C21?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:34,434 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D21?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:34,728 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E21?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:34,932 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F21?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:26:34,933 0 INFO - Update row action complete
-2022-06-21 14:26:49,938 0 INFO - Update row action start
-2022-06-21 14:26:50,139 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A22?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:50,433 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B22?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:50,625 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C22?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:50,909 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D22?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:51,112 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E22?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:26:51,402 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F22?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:26:51,403 0 INFO - Update row action complete
-2022-06-21 14:27:06,411 0 INFO - Update row action start
-2022-06-21 14:27:06,630 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A23?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:06,824 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B23?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:07,029 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C23?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:07,231 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D23?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:07,515 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E23?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:07,713 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F23?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:27:07,716 0 INFO - Update row action complete
-2022-06-21 14:27:22,729 0 INFO - Update row action start
-2022-06-21 14:27:22,962 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A24?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:23,151 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B24?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:23,349 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C24?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:23,552 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D24?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:23,749 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E24?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:23,951 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F24?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:27:23,951 0 INFO - Update row action complete
-2022-06-21 14:27:38,962 0 INFO - Update row action start
-2022-06-21 14:27:39,175 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A25?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:39,366 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B25?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:39,563 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C25?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:39,753 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D25?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:39,971 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E25?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:40,164 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F25?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:27:40,164 0 INFO - Update row action complete
-2022-06-21 14:27:55,167 0 INFO - Update row action start
-2022-06-21 14:27:55,378 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A26?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:55,579 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B26?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:55,778 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C26?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:55,978 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D26?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:56,268 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E26?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:27:56,456 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F26?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:27:56,457 0 INFO - Update row action complete
-2022-06-21 14:28:11,467 0 INFO - Update row action start
-2022-06-21 14:28:11,682 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A27?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:11,914 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B27?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:12,120 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C27?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:12,330 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D27?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:12,616 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E27?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:12,807 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F27?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:28:12,808 0 INFO - Update row action complete
-2022-06-21 14:28:27,821 0 INFO - Update row action start
-2022-06-21 14:28:28,241 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A28?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:28,526 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B28?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:28,729 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C28?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:28,926 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D28?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:29,123 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E28?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:29,352 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F28?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:28:29,353 0 INFO - Update row action complete
-2022-06-21 14:28:44,365 0 INFO - Update row action start
-2022-06-21 14:28:44,580 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A29?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:44,787 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B29?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:45,084 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C29?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:45,366 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D29?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:45,571 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E29?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:28:45,764 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F29?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:28:45,765 0 INFO - Update row action complete
-2022-06-21 14:29:00,769 0 INFO - Update row action start
-2022-06-21 14:29:00,980 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A30?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:29:01,174 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21B30?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:29:01,376 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21C30?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:29:01,571 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21D30?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:29:01,780 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21E30?valueInputOption=RAW HTTP/1.1" 200 None
-2022-06-21 14:29:01,977 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21F30?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
-2022-06-21 14:29:01,977 0 INFO - Update row action complete
-2022-06-21 14:29:16,983 0 INFO - Update row action start
-2022-06-21 14:29:17,752 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1iuNDzcc2w8CPirdk0eDX5VIK29q4m2JfDQ4izWrDVF0/values/%27TestSheet%27%21A31?valueInputOption=RAW HTTP/1.1" 502 1613
+2022-07-08 23:21:50,380 0 DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2022-07-08 23:21:50,402 0 DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2022-07-08 23:21:50,404 0 DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2022-07-08 23:21:50,607 0 DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2022-07-08 23:21:50,608 0 DEBUG - Starting new HTTPS connection (1): www.googleapis.com:443
+2022-07-08 23:21:50,939 0 DEBUG - https://www.googleapis.com:443 "GET /drive/v3/files?q=mimeType%3D%22application%2Fvnd.google-apps.spreadsheet%22+and+name+%3D+%22Tarkov+Butler%22&pageSize=1000&supportsAllDrives=True&includeItemsFromAllDrives=True&fields=kind%2CnextPageToken%2Cfiles%28id%2Cname%2CcreatedTime%2CmodifiedTime%29 HTTP/1.1" 200 None
+2022-07-08 23:21:50,941 0 DEBUG - Starting new HTTPS connection (1): sheets.googleapis.com:443
+2022-07-08 23:21:51,365 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY?includeGridData=false HTTP/1.1" 200 None
+2022-07-08 23:21:51,697 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY?includeGridData=false HTTP/1.1" 200 None
+2022-07-08 23:21:51,698 0 INFO - Google sheets authentication successful
+2022-07-08 23:21:51,699 0 INFO - Testing for item query of pile of meds
+2022-07-08 23:21:51,700 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:21:53,938 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:21:53,939 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Pile of meds', 'fleaMarketFee': 1028, 'sellFor': [{'price': 3250, 'source': 'prapor'}, {'price': 4095, 'source': 'therapist'}, {'price': 2600, 'source': 'fence'}, {'price': 3185, 'source': 'skier'}, {'price': 6949, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:21:53,940 0 INFO - pile of meds completed successfully
+2022-07-08 23:21:53,940 0 INFO - Testing for item query of shampoo
+2022-07-08 23:21:53,941 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:21:55,687 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:21:55,689 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Schaman shampoo', 'fleaMarketFee': 3080, 'sellFor': [{'price': 3500, 'source': 'prapor'}, {'price': 4410, 'source': 'therapist'}, {'price': 2800, 'source': 'fence'}, {'price': 3430, 'source': 'skier'}, {'price': 17333, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:21:55,689 0 INFO - shampoo completed successfully
+2022-07-08 23:21:55,689 0 INFO - Testing for item query of slickers
+2022-07-08 23:21:55,690 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:21:56,964 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:21:56,965 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Slickers chocolate bar', 'fleaMarketFee': 2224, 'sellFor': [{'price': 1426, 'source': 'therapist'}, {'price': 906, 'source': 'fence'}, {'price': 1359, 'source': 'jaeger'}, {'price': 9487, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:21:56,965 0 INFO - slickers completed successfully
+2022-07-08 23:21:56,965 0 INFO - Testing for item query of wires
+2022-07-08 23:21:56,966 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:21:58,483 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:21:58,484 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bundle of wires', 'fleaMarketFee': 3046, 'sellFor': [{'price': 4662, 'source': 'therapist'}, {'price': 2960, 'source': 'fence'}, {'price': 3626, 'source': 'skier'}, {'price': 33, 'source': 'peacekeeper'}, {'price': 4144, 'source': 'mechanic'}, {'price': 17500, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:21:58,485 0 INFO - wires completed successfully
+2022-07-08 23:21:58,485 0 INFO - Testing for item query of sj6
+2022-07-08 23:21:58,486 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:00,417 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:00,418 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'SJ6 TGLabs combat stimulant injector', 'fleaMarketFee': 7827, 'sellFor': [{'price': 13975, 'source': 'prapor'}, {'price': 17608, 'source': 'therapist'}, {'price': 11180, 'source': 'fence'}, {'price': 16770, 'source': 'jaeger'}, {'price': 49999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:00,419 0 INFO - sj6 completed successfully
+2022-07-08 23:22:00,419 0 INFO - Testing for item query of 9x19mm rip
+2022-07-08 23:22:00,419 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:03,173 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:03,174 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x19mm RIP', 'fleaMarketFee': 156, 'sellFor': [{'price': 154, 'source': 'fence'}, {'price': 192, 'source': 'prapor'}, {'price': 215, 'source': 'mechanic'}, {'price': 900, 'source': 'fleaMarket'}]}, {'name': '9x19mm RIP ammo pack (20 pcs)', 'fleaMarketFee': 24817, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 30000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:03,175 0 INFO - 9x19mm rip completed successfully
+2022-07-08 23:22:03,175 0 INFO - Testing for item query of eagle
+2022-07-08 23:22:03,176 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:04,803 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:04,804 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Gunpowder "Eagle"', 'fleaMarketFee': 4914, 'sellFor': [{'price': 16000, 'source': 'prapor'}, {'price': 20160, 'source': 'therapist'}, {'price': 12800, 'source': 'fence'}, {'price': 15680, 'source': 'skier'}, {'price': 33000, 'source': 'fleaMarket'}]}, {'name': 'Eagle Industries MMAC plate carrier (Ranger Green)', 'fleaMarketFee': None, 'sellFor': [{'price': 30000, 'source': 'prapor'}, {'price': 24000, 'source': 'fence'}, {'price': 29400, 'source': 'skier'}, {'price': 267, 'source': 'peacekeeper'}, {'price': 37200, 'source': 'ragman'}, {'price': 36000, 'source': 'jaeger'}]}]}}
+2022-07-08 23:22:04,805 0 INFO - eagle completed successfully
+2022-07-08 23:22:04,805 0 INFO - Testing for item query of can of max energy
+2022-07-08 23:22:04,806 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:06,151 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:06,153 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Max Energy energy drink', 'fleaMarketFee': 4169, 'sellFor': [{'price': 1848, 'source': 'therapist'}, {'price': 1173, 'source': 'fence'}, {'price': 1760, 'source': 'jaeger'}, {'price': 15500, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:06,153 0 INFO - can of max energy completed successfully
+2022-07-08 23:22:06,153 0 INFO - Testing for item query of scav backpack
+2022-07-08 23:22:06,154 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:07,755 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:07,756 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Scav backpack', 'fleaMarketFee': 2566, 'sellFor': [{'price': 7197, 'source': 'fence'}, {'price': 8817, 'source': 'skier'}, {'price': 11156, 'source': 'ragman'}, {'price': 10796, 'source': 'jaeger'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:07,756 0 INFO - scav backpack completed successfully
+2022-07-08 23:22:07,756 0 INFO - Testing for item query of canister with purified water
+2022-07-08 23:22:07,757 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:09,299 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:09,300 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Canister with purified water', 'fleaMarketFee': 16229, 'sellFor': [{'price': 31500, 'source': 'therapist'}, {'price': 20000, 'source': 'fence'}, {'price': 30000, 'source': 'jaeger'}, {'price': 99876, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:09,301 0 INFO - canister with purified water completed successfully
+2022-07-08 23:22:09,301 0 INFO - Testing for item query of bottle of water
+2022-07-08 23:22:09,302 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:10,771 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:10,772 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'fleaMarketFee': 3287, 'sellFor': [{'price': 1543, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12488, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:10,772 0 INFO - bottle of water completed successfully
+2022-07-08 23:22:10,772 0 INFO - Testing for item query of cms surgical kit
+2022-07-08 23:22:10,773 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:12,108 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:12,109 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'CMS surgical kit', 'fleaMarketFee': 4657, 'sellFor': [{'price': 18000, 'source': 'prapor'}, {'price': 22680, 'source': 'therapist'}, {'price': 14400, 'source': 'fence'}, {'price': 160, 'source': 'peacekeeper'}, {'price': 22320, 'source': 'ragman'}, {'price': 21600, 'source': 'jaeger'}, {'price': 29999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:12,109 0 INFO - cms surgical kit completed successfully
+2022-07-08 23:22:12,110 0 INFO - Testing for item query of Can of Hot Rod energy drink
+2022-07-08 23:22:12,110 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:13,467 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:13,468 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of Hot Rod energy drink', 'fleaMarketFee': 3888, 'sellFor': [{'price': 2668, 'source': 'therapist'}, {'price': 1694, 'source': 'fence'}, {'price': 2541, 'source': 'jaeger'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:13,468 0 INFO - Can of Hot Rod energy drink completed successfully
+2022-07-08 23:22:13,468 0 INFO - Testing for item query of ox bleach
+2022-07-08 23:22:13,469 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:15,120 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:15,121 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Ox bleach', 'fleaMarketFee': 1825, 'sellFor': [{'price': 2994, 'source': 'prapor'}, {'price': 3772, 'source': 'therapist'}, {'price': 2395, 'source': 'fence'}, {'price': 2934, 'source': 'skier'}, {'price': 11420, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:15,121 0 INFO - ox bleach completed successfully
+2022-07-08 23:22:15,122 0 INFO - Testing for item query of secure flash drive
+2022-07-08 23:22:15,123 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:17,372 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:17,373 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Secure Flash drive', 'fleaMarketFee': 12439, 'sellFor': [{'price': 16060, 'source': 'fence'}, {'price': 179, 'source': 'peacekeeper'}, {'price': 77500, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:17,373 0 INFO - secure flash drive completed successfully
+2022-07-08 23:22:17,373 0 INFO - Testing for item query of aramid fiber fabric
+2022-07-08 23:22:17,374 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:18,963 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:18,964 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aramid fiber fabric', 'fleaMarketFee': 1100, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 6968, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:18,964 0 INFO - aramid fiber fabric completed successfully
+2022-07-08 23:22:18,964 0 INFO - Testing for item query of vodka
+2022-07-08 23:22:18,965 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:20,876 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:20,877 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of Tarkovskaya vodka', 'fleaMarketFee': 2876, 'sellFor': [{'price': 15750, 'source': 'therapist'}, {'price': 10000, 'source': 'fence'}, {'price': 15000, 'source': 'jaeger'}, {'price': 12500, 'source': 'prapor'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:20,878 0 INFO - vodka completed successfully
+2022-07-08 23:22:20,878 0 INFO - Testing for item query of wilston cigarettes
+2022-07-08 23:22:20,879 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:22,371 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:22,373 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Wilston cigarettes', 'fleaMarketFee': 862, 'sellFor': [{'price': 3992, 'source': 'prapor'}, {'price': 5029, 'source': 'therapist'}, {'price': 3193, 'source': 'fence'}, {'price': 3912, 'source': 'skier'}, {'price': 4500, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:22,373 0 INFO - wilston cigarettes completed successfully
+2022-07-08 23:22:22,373 0 INFO - Testing for item query of bottle of water
+2022-07-08 23:22:22,374 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:22,700 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:22,701 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of water (0.6L)', 'fleaMarketFee': 3287, 'sellFor': [{'price': 1543, 'source': 'therapist'}, {'price': 980, 'source': 'fence'}, {'price': 1470, 'source': 'jaeger'}, {'price': 12488, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:22,701 0 INFO - bottle of water completed successfully
+2022-07-08 23:22:22,701 0 INFO - Testing for item query of emergency water ration
+2022-07-08 23:22:22,702 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:24,191 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:24,192 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Emergency Water Ration', 'fleaMarketFee': 3754, 'sellFor': [{'price': 4536, 'source': 'therapist'}, {'price': 2880, 'source': 'fence'}, {'price': 4320, 'source': 'jaeger'}, {'price': 19999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:24,193 0 INFO - emergency water ration completed successfully
+2022-07-08 23:22:24,193 0 INFO - Testing for item query of aquamari water bottle
+2022-07-08 23:22:24,194 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:25,782 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:25,783 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aquamari water bottle with filter', 'fleaMarketFee': 6310, 'sellFor': [{'price': 5418, 'source': 'therapist'}, {'price': 3440, 'source': 'fence'}, {'price': 5160, 'source': 'jaeger'}, {'price': 29899, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:25,784 0 INFO - aquamari water bottle completed successfully
+2022-07-08 23:22:25,784 0 INFO - Testing for item query of aseptic bandage
+2022-07-08 23:22:25,785 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:27,303 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:27,304 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Aseptic bandage', 'fleaMarketFee': 464, 'sellFor': [{'price': 1040, 'source': 'prapor'}, {'price': 1310, 'source': 'therapist'}, {'price': 832, 'source': 'fence'}, {'price': 9, 'source': 'peacekeeper'}, {'price': 1289, 'source': 'ragman'}, {'price': 1248, 'source': 'jaeger'}, {'price': 3100, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:27,304 0 INFO - aseptic bandage completed successfully
+2022-07-08 23:22:27,304 0 INFO - Testing for item query of toilet paper
+2022-07-08 23:22:27,305 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:28,633 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:28,635 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Toilet paper', 'fleaMarketFee': 1103, 'sellFor': [{'price': 4400, 'source': 'prapor'}, {'price': 5544, 'source': 'therapist'}, {'price': 3520, 'source': 'fence'}, {'price': 4312, 'source': 'skier'}, {'price': 7000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:28,635 0 INFO - toilet paper completed successfully
+2022-07-08 23:22:28,635 0 INFO - Testing for item query of m.u.l.e.
+2022-07-08 23:22:28,636 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:30,706 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:30,707 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'M.U.L.E. stimulant injector', 'fleaMarketFee': 16693, 'sellFor': [{'price': 21775, 'source': 'prapor'}, {'price': 27436, 'source': 'therapist'}, {'price': 17420, 'source': 'fence'}, {'price': 26130, 'source': 'jaeger'}, {'price': 98000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:30,707 0 INFO - m.u.l.e. completed successfully
+2022-07-08 23:22:30,707 0 INFO - Testing for item query of propital
+2022-07-08 23:22:30,708 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:32,776 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:32,777 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Propital regenerative stimulant injector', 'fleaMarketFee': 4124, 'sellFor': [{'price': 10530, 'source': 'prapor'}, {'price': 13267, 'source': 'therapist'}, {'price': 8424, 'source': 'fence'}, {'price': 12636, 'source': 'jaeger'}, {'price': 27999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:32,777 0 INFO - propital completed successfully
+2022-07-08 23:22:32,777 0 INFO - Testing for item query of salewa
+2022-07-08 23:22:32,778 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:34,105 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:34,106 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Salewa first aid kit', 'fleaMarketFee': 3681, 'sellFor': [{'price': 9431, 'source': 'prapor'}, {'price': 11883, 'source': 'therapist'}, {'price': 7545, 'source': 'fence'}, {'price': 11317, 'source': 'jaeger'}, {'price': 25000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:34,106 0 INFO - salewa completed successfully
+2022-07-08 23:22:34,106 0 INFO - Testing for item query of ifak
+2022-07-08 23:22:34,107 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:36,126 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:36,127 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'IFAK individual first aid kit', 'fleaMarketFee': 3000, 'sellFor': [{'price': 11882, 'source': 'prapor'}, {'price': 14971, 'source': 'therapist'}, {'price': 9505, 'source': 'fence'}, {'price': 14258, 'source': 'jaeger'}, {'price': 19100, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:36,128 0 INFO - ifak completed successfully
+2022-07-08 23:22:36,128 0 INFO - Testing for item query of capacitors
+2022-07-08 23:22:36,129 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:38,339 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:38,340 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Capacitors', 'fleaMarketFee': 2283, 'sellFor': [{'price': 1575, 'source': 'therapist'}, {'price': 1000, 'source': 'fence'}, {'price': 1225, 'source': 'skier'}, {'price': 11, 'source': 'peacekeeper'}, {'price': 1400, 'source': 'mechanic'}, {'price': 9999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:38,341 0 INFO - capacitors completed successfully
+2022-07-08 23:22:38,341 0 INFO - Testing for item query of printed circuit board
+2022-07-08 23:22:38,342 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:41,373 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:41,374 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Printed circuit board', 'fleaMarketFee': 1584, 'sellFor': [{'price': 8031, 'source': 'therapist'}, {'price': 5099, 'source': 'fence'}, {'price': 6247, 'source': 'skier'}, {'price': 57, 'source': 'peacekeeper'}, {'price': 7139, 'source': 'mechanic'}, {'price': 9999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:41,374 0 INFO - printed circuit board completed successfully
+2022-07-08 23:22:41,375 0 INFO - Testing for item query of 5.45x39mm pp
+2022-07-08 23:22:41,375 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:43,140 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:43,141 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '5.45x39mm PP gs', 'fleaMarketFee': 65, 'sellFor': [{'price': 43, 'source': 'fence'}, {'price': 54, 'source': 'prapor'}, {'price': 60, 'source': 'mechanic'}, {'price': 330, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (120 pcs)', 'fleaMarketFee': 24817, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 30000, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PP gs ammo pack (30 pcs)', 'fleaMarketFee': 150, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}, {'name': '5.45x39mm PPBS gs "Igolnik"', 'fleaMarketFee': None, 'sellFor': [{'price': 224, 'source': 'fence'}, {'price': 281, 'source': 'prapor'}, {'price': 314, 'source': 'mechanic'}]}, {'name': '5.45x39mm PPBS gs "Igolnik" ammo pack (30 pcs)', 'fleaMarketFee': 150, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:43,141 0 INFO - 5.45x39mm pp completed successfully
+2022-07-08 23:22:43,141 0 INFO - Testing for item query of 9x18mm PM Rg028
+2022-07-08 23:22:43,142 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:45,141 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:45,142 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x18mm PM RG028 gzh', 'fleaMarketFee': 36, 'sellFor': [{'price': 31, 'source': 'fence'}, {'price': 39, 'source': 'prapor'}, {'price': 43, 'source': 'mechanic'}, {'price': 199, 'source': 'fleaMarket'}]}, {'name': '9x18mm PM RG028 gzh ammo pack (16 pcs)', 'fleaMarketFee': 150, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:45,143 0 INFO - 9x18mm PM Rg028 completed successfully
+2022-07-08 23:22:45,143 0 INFO - Testing for item query of weapon parts
+2022-07-08 23:22:45,144 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:46,672 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:46,674 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Weapon parts', 'fleaMarketFee': 8853, 'sellFor': [{'price': 7120, 'source': 'prapor'}, {'price': 8971, 'source': 'therapist'}, {'price': 5696, 'source': 'fence'}, {'price': 6977, 'source': 'skier'}, {'price': 44444, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:46,674 0 INFO - weapon parts completed successfully
+2022-07-08 23:22:46,674 0 INFO - Testing for item query of car battery
+2022-07-08 23:22:46,675 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:48,099 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:48,101 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Car battery', 'fleaMarketFee': 13226, 'sellFor': [{'price': 30781, 'source': 'prapor'}, {'price': 38784, 'source': 'therapist'}, {'price': 24625, 'source': 'fence'}, {'price': 30165, 'source': 'skier'}, {'price': 88888, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:48,101 0 INFO - car battery completed successfully
+2022-07-08 23:22:48,101 0 INFO - Testing for item query of nixxor lens
+2022-07-08 23:22:48,102 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:49,337 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:49,338 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'NIXXOR lens', 'fleaMarketFee': 20242, 'sellFor': [{'price': 15939, 'source': 'therapist'}, {'price': 10120, 'source': 'fence'}, {'price': 12397, 'source': 'skier'}, {'price': 113, 'source': 'peacekeeper'}, {'price': 14168, 'source': 'mechanic'}, {'price': 93000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:49,339 0 INFO - nixxor lens completed successfully
+2022-07-08 23:22:49,339 0 INFO - Testing for item query of .366 tkm ap-m
+2022-07-08 23:22:49,340 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:50,599 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:50,600 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '.366 TKM AP-M', 'fleaMarketFee': 671, 'sellFor': [{'price': 80, 'source': 'fence'}, {'price': 101, 'source': 'prapor'}, {'price': 113, 'source': 'mechanic'}, {'price': 1800, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:50,601 0 INFO - .366 tkm ap-m completed successfully
+2022-07-08 23:22:50,601 0 INFO - Testing for item query of kalashnikov ak-74m 5.45x39 assault rifle
+2022-07-08 23:22:50,602 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:51,985 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:51,986 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Kalashnikov AK-74M 5.45x39 assault rifle', 'fleaMarketFee': 7924, 'sellFor': [{'price': 13090, 'source': 'prapor'}, {'price': 10472, 'source': 'fence'}, {'price': 117, 'source': 'peacekeeper'}, {'price': 14661, 'source': 'mechanic'}, {'price': 49666, 'source': 'fleaMarket'}]}, {'name': 'Kalashnikov AK-74M 5.45x39 assault rifle Zenitco', 'fleaMarketFee': 3927, 'sellFor': [{'price': 13090, 'source': 'prapor'}, {'price': 10472, 'source': 'fence'}, {'price': 117, 'source': 'peacekeeper'}, {'price': 14661, 'source': 'mechanic'}]}]}}
+2022-07-08 23:22:51,986 0 INFO - kalashnikov ak-74m 5.45x39 assault rifle completed successfully
+2022-07-08 23:22:51,987 0 INFO - Testing for item query of 9x18mm pm pbm gzh
+2022-07-08 23:22:51,988 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:53,441 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:53,442 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '9x18mm PM PBM gzh', 'fleaMarketFee': 44, 'sellFor': [{'price': 28, 'source': 'fence'}, {'price': 35, 'source': 'prapor'}, {'price': 39, 'source': 'mechanic'}, {'price': 222, 'source': 'fleaMarket'}]}, {'name': '9x18mm PM PBM gzh ammo pack (16 pcs)', 'fleaMarketFee': 5417, 'sellFor': [{'price': 400, 'source': 'fence'}, {'price': 12000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:53,442 0 INFO - 9x18mm pm pbm gzh completed successfully
+2022-07-08 23:22:53,442 0 INFO - Testing for item query of vog-25
+2022-07-08 23:22:53,443 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:55,661 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:55,662 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '40mm VOG-25', 'fleaMarketFee': 1143, 'sellFor': [{'price': 2700, 'source': 'fence'}, {'price': 3375, 'source': 'prapor'}, {'price': 3780, 'source': 'mechanic'}, {'price': 7777, 'source': 'fleaMarket'}]}, {'name': 'VOG-25 Khattabka improvised hand grenade', 'fleaMarketFee': 4364, 'sellFor': [{'price': 2350, 'source': 'prapor'}, {'price': 1880, 'source': 'fence'}, {'price': 19000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:55,662 0 INFO - vog-25 completed successfully
+2022-07-08 23:22:55,662 0 INFO - Testing for item query of can of thermite
+2022-07-08 23:22:55,663 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:56,825 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:56,825 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of thermite', 'fleaMarketFee': 10144, 'sellFor': [{'price': 32760, 'source': 'therapist'}, {'price': 20800, 'source': 'fence'}, {'price': 68888, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:56,827 0 INFO - can of thermite completed successfully
+2022-07-08 23:22:56,827 0 INFO - Testing for item query of 12/70 flechette
+2022-07-08 23:22:56,827 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:58,175 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:58,176 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': '12/70 flechette', 'fleaMarketFee': 479, 'sellFor': [{'price': 30, 'source': 'fence'}, {'price': 37, 'source': 'prapor'}, {'price': 42, 'source': 'mechanic'}, {'price': 994, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:58,177 0 INFO - 12/70 flechette completed successfully
+2022-07-08 23:22:58,177 0 INFO - Testing for item query of magnet
+2022-07-08 23:22:58,178 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:22:59,607 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:22:59,608 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Magnet', 'fleaMarketFee': 3025, 'sellFor': [{'price': 8009, 'source': 'therapist'}, {'price': 5085, 'source': 'fence'}, {'price': 6229, 'source': 'skier'}, {'price': 57, 'source': 'peacekeeper'}, {'price': 7119, 'source': 'mechanic'}, {'price': 20000, 'source': 'fleaMarket'}]}, {'name': 'Secured magnetic tape cassette', 'fleaMarketFee': 15363, 'sellFor': [{'price': 58000, 'source': 'fence'}, {'price': 646, 'source': 'peacekeeper'}, {'price': 60999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:22:59,608 0 INFO - magnet completed successfully
+2022-07-08 23:22:59,608 0 INFO - Testing for item query of kite
+2022-07-08 23:22:59,609 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:01,670 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:01,671 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Gunpowder "Kite"', 'fleaMarketFee': 1826, 'sellFor': [{'price': 7000, 'source': 'prapor'}, {'price': 8820, 'source': 'therapist'}, {'price': 5600, 'source': 'fence'}, {'price': 6860, 'source': 'skier'}, {'price': 11800, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:01,672 0 INFO - kite completed successfully
+2022-07-08 23:23:01,672 0 INFO - Testing for item query of hawk
+2022-07-08 23:23:01,673 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:03,200 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:03,201 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Kiba Arms Tactical Tomahawk', 'fleaMarketFee': 2520, 'sellFor': [{'price': 6720, 'source': 'fence'}, {'price': 10080, 'source': 'jaeger'}, {'price': 0, 'source': 'fleaMarket'}]}, {'name': 'BlackHawk! Commando chest harness (Coyote Tan)', 'fleaMarketFee': 3807, 'sellFor': [{'price': 16834, 'source': 'prapor'}, {'price': 13467, 'source': 'fence'}, {'price': 16497, 'source': 'skier'}, {'price': 150, 'source': 'peacekeeper'}, {'price': 20874, 'source': 'ragman'}, {'price': 20201, 'source': 'jaeger'}, {'price': 21980, 'source': 'fleaMarket'}]}, {'name': 'BlackHawk! Commando chest harness (Black)', 'fleaMarketFee': 6631, 'sellFor': [{'price': 16834, 'source': 'prapor'}, {'price': 13467, 'source': 'fence'}, {'price': 16497, 'source': 'skier'}, {'price': 150, 'source': 'peacekeeper'}, {'price': 20874, 'source': 'ragman'}, {'price': 20201, 'source': 'jaeger'}, {'price': 45000, 'source': 'fleaMarket'}]}, {'name': 'Gunpowder "Hawk"', 'fleaMarketFee': 3895, 'sellFor': [{'price': 17500, 'source': 'prapor'}, {'price': 22050, 'source': 'therapist'}, {'price': 14000, 'source': 'fence'}, {'price': 17150, 'source': 'skier'}, {'price': 21900, 'source': 'fleaMarket'}]}, {'name': 'SwampFox Trihawk Prism Scope 3x30', 'fleaMarketFee': 4468, 'sellFor': [{'price': 14892, 'source': 'prapor'}, {'price': 11913, 'source': 'fence'}, {'price': 14594, 'source': 'skier'}, {'price': 133, 'source': 'peacekeeper'}, {'price': 16679, 'source': 'mechanic'}, {'price': 0, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:03,202 0 INFO - hawk completed successfully
+2022-07-08 23:23:03,202 0 INFO - Testing for item query of rechargeable battery
+2022-07-08 23:23:03,203 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:06,225 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:06,226 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Rechargeable battery', 'fleaMarketFee': 2018, 'sellFor': [{'price': 8517, 'source': 'prapor'}, {'price': 10732, 'source': 'therapist'}, {'price': 6814, 'source': 'fence'}, {'price': 8347, 'source': 'skier'}, {'price': 12300, 'source': 'fleaMarket'}]}, {'name': 'Cyclon rechargeable battery', 'fleaMarketFee': 10696, 'sellFor': [{'price': 42500, 'source': 'prapor'}, {'price': 53550, 'source': 'therapist'}, {'price': 34000, 'source': 'fence'}, {'price': 41650, 'source': 'skier'}, {'price': 68000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:06,227 0 INFO - rechargeable battery completed successfully
+2022-07-08 23:23:06,227 0 INFO - Testing for item query of lucky scav junk box
+2022-07-08 23:23:06,228 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:08,306 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:08,307 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Lucky Scav Junk box', 'fleaMarketFee': 216529, 'sellFor': [{'price': 765619, 'source': 'therapist'}, {'price': 486107, 'source': 'fence'}, {'price': 753466, 'source': 'ragman'}, {'price': 1475999, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:08,308 0 INFO - lucky scav junk box completed successfully
+2022-07-08 23:23:08,308 0 INFO - Testing for item query of ana tactical m1 armored rig
+2022-07-08 23:23:08,309 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:10,714 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:10,715 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'ANA Tactical M1 armored rig', 'fleaMarketFee': 28100, 'sellFor': [{'price': 40635, 'source': 'prapor'}, {'price': 32508, 'source': 'fence'}, {'price': 39822, 'source': 'skier'}, {'price': 362, 'source': 'peacekeeper'}, {'price': 50387, 'source': 'ragman'}, {'price': 48762, 'source': 'jaeger'}, {'price': 169950, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:10,716 0 INFO - ana tactical m1 armored rig completed successfully
+2022-07-08 23:23:10,716 0 INFO - Testing for item query of magazine case
+2022-07-08 23:23:10,716 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:12,273 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:12,274 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Magazine case', 'fleaMarketFee': 62149, 'sellFor': [{'price': 148050, 'source': 'therapist'}, {'price': 94000, 'source': 'fence'}, {'price': 145700, 'source': 'ragman'}, {'price': 402222, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:12,274 0 INFO - magazine case completed successfully
+2022-07-08 23:23:12,275 0 INFO - Testing for item query of ak-74 5.45x39 6l31 60-round magazine
+2022-07-08 23:23:12,275 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:13,635 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:13,636 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'AK-74 5.45x39 6L31 60-round magazine', 'fleaMarketFee': 12261, 'sellFor': [{'price': 9159, 'source': 'prapor'}, {'price': 7327, 'source': 'fence'}, {'price': 82, 'source': 'peacekeeper'}, {'price': 10258, 'source': 'mechanic'}, {'price': 60000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:13,636 0 INFO - ak-74 5.45x39 6l31 60-round magazine completed successfully
+2022-07-08 23:23:13,636 0 INFO - Testing for item query of fleece
+2022-07-08 23:23:13,637 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:16,194 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:16,195 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Tactical fleece beanie', 'fleaMarketFee': 1134, 'sellFor': [{'price': 1804, 'source': 'fence'}, {'price': 2209, 'source': 'skier'}, {'price': 20, 'source': 'peacekeeper'}, {'price': 2796, 'source': 'ragman'}, {'price': 7420, 'source': 'fleaMarket'}]}, {'name': 'Fleece fabric', 'fleaMarketFee': 7942, 'sellFor': [{'price': 2000, 'source': 'prapor'}, {'price': 2520, 'source': 'therapist'}, {'price': 1600, 'source': 'fence'}, {'price': 1960, 'source': 'skier'}, {'price': 26000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:16,196 0 INFO - fleece completed successfully
+2022-07-08 23:23:16,196 0 INFO - Testing for item query of cordura
+2022-07-08 23:23:16,197 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:17,813 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:17,814 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Cordura polyamide fabric', 'fleaMarketFee': 1851, 'sellFor': [{'price': 6600, 'source': 'prapor'}, {'price': 8316, 'source': 'therapist'}, {'price': 5280, 'source': 'fence'}, {'price': 6468, 'source': 'skier'}, {'price': 12222, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:17,814 0 INFO - cordura completed successfully
+2022-07-08 23:23:17,814 0 INFO - Testing for item query of army bandage
+2022-07-08 23:23:17,815 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:19,454 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:19,455 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Army bandage', 'fleaMarketFee': 725, 'sellFor': [{'price': 1464, 'source': 'prapor'}, {'price': 1844, 'source': 'therapist'}, {'price': 1171, 'source': 'fence'}, {'price': 13, 'source': 'peacekeeper'}, {'price': 1815, 'source': 'ragman'}, {'price': 1756, 'source': 'jaeger'}, {'price': 4759, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:19,456 0 INFO - army bandage completed successfully
+2022-07-08 23:23:19,456 0 INFO - Testing for item query of ripstop fabric
+2022-07-08 23:23:19,457 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:20,828 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:20,829 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Ripstop fabric', 'fleaMarketFee': 3278, 'sellFor': [{'price': 2900, 'source': 'prapor'}, {'price': 3654, 'source': 'therapist'}, {'price': 2320, 'source': 'fence'}, {'price': 2842, 'source': 'skier'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:20,830 0 INFO - ripstop fabric completed successfully
+2022-07-08 23:23:20,830 0 INFO - Testing for item query of grizzly medical kit
+2022-07-08 23:23:20,831 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:22,866 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:22,867 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Grizzly medical kit', 'fleaMarketFee': 5585, 'sellFor': [{'price': 17521, 'source': 'prapor'}, {'price': 22076, 'source': 'therapist'}, {'price': 14016, 'source': 'fence'}, {'price': 21025, 'source': 'jaeger'}, {'price': 37777, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:22,868 0 INFO - grizzly medical kit completed successfully
+2022-07-08 23:23:22,868 0 INFO - Testing for item query of vaseline balm
+2022-07-08 23:23:22,869 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:24,165 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:24,167 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Vaseline balm', 'fleaMarketFee': 7674, 'sellFor': [{'price': 7422, 'source': 'prapor'}, {'price': 9351, 'source': 'therapist'}, {'price': 5937, 'source': 'fence'}, {'price': 8906, 'source': 'jaeger'}, {'price': 41000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:24,167 0 INFO - vaseline balm completed successfully
+2022-07-08 23:23:24,167 0 INFO - Testing for item query of surv12 field surgical kit
+2022-07-08 23:23:24,168 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:25,591 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:25,592 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Surv12 field surgical kit', 'fleaMarketFee': 8010, 'sellFor': [{'price': 36000, 'source': 'prapor'}, {'price': 45360, 'source': 'therapist'}, {'price': 28800, 'source': 'fence'}, {'price': 321, 'source': 'peacekeeper'}, {'price': 44640, 'source': 'ragman'}, {'price': 43200, 'source': 'jaeger'}, {'price': 45000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:25,592 0 INFO - surv12 field surgical kit completed successfully
+2022-07-08 23:23:25,592 0 INFO - Testing for item query of calok-b hemostatic applicator
+2022-07-08 23:23:25,593 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:27,890 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:27,891 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'CALOK-B hemostatic applicator', 'fleaMarketFee': 4238, 'sellFor': [{'price': 2856, 'source': 'prapor'}, {'price': 3598, 'source': 'therapist'}, {'price': 2284, 'source': 'fence'}, {'price': 25, 'source': 'peacekeeper'}, {'price': 3541, 'source': 'ragman'}, {'price': 3427, 'source': 'jaeger'}, {'price': 20000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:27,892 0 INFO - calok-b hemostatic applicator completed successfully
+2022-07-08 23:23:27,892 0 INFO - Testing for item query of ai-2 medkit
+2022-07-08 23:23:27,893 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:29,367 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:29,368 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'AI-2 medkit', 'fleaMarketFee': 620, 'sellFor': [{'price': 2600, 'source': 'prapor'}, {'price': 3276, 'source': 'therapist'}, {'price': 2080, 'source': 'fence'}, {'price': 3120, 'source': 'jaeger'}, {'price': 3799, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:29,369 0 INFO - ai-2 medkit completed successfully
+2022-07-08 23:23:29,369 0 INFO - Testing for item query of medical bloodset
+2022-07-08 23:23:29,370 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:31,566 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:31,567 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Medical bloodset', 'fleaMarketFee': 6541, 'sellFor': [{'price': 4882, 'source': 'prapor'}, {'price': 6151, 'source': 'therapist'}, {'price': 3906, 'source': 'fence'}, {'price': 4784, 'source': 'skier'}, {'price': 32000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:31,567 0 INFO - medical bloodset completed successfully
+2022-07-08 23:23:31,567 0 INFO - Testing for item query of can of condensed milk
+2022-07-08 23:23:31,568 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:33,774 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:33,775 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Can of condensed milk', 'fleaMarketFee': 2801, 'sellFor': [{'price': 15714, 'source': 'therapist'}, {'price': 9977, 'source': 'fence'}, {'price': 14965, 'source': 'jaeger'}, {'price': 16000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:33,776 0 INFO - can of condensed milk completed successfully
+2022-07-08 23:23:33,776 0 INFO - Testing for item query of Bottle of Tarkovskaya vodka
+2022-07-08 23:23:33,777 0 DEBUG - Starting new HTTPS connection (1): api.tarkov.dev:443
+2022-07-08 23:23:34,957 0 DEBUG - https://api.tarkov.dev:443 "POST /graphql HTTP/1.1" 200 None
+2022-07-08 23:23:34,958 0 INFO - Result of run_query is {'data': {'itemsByName': [{'name': 'Bottle of Tarkovskaya vodka', 'fleaMarketFee': 2876, 'sellFor': [{'price': 15750, 'source': 'therapist'}, {'price': 10000, 'source': 'fence'}, {'price': 15000, 'source': 'jaeger'}, {'price': 12500, 'source': 'prapor'}, {'price': 17000, 'source': 'fleaMarket'}]}]}}
+2022-07-08 23:23:34,958 0 INFO - Bottle of Tarkovskaya vodka completed successfully
+2022-07-08 23:23:49,964 0 INFO - Update row action start
+2022-07-08 23:23:50,316 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21A2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-07-08 23:23:50,628 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21B2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-07-08 23:23:50,943 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21C2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-07-08 23:23:51,156 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21D2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-07-08 23:23:51,469 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21E2?valueInputOption=RAW HTTP/1.1" 200 None
+2022-07-08 23:23:51,778 0 DEBUG - https://sheets.googleapis.com:443 "PUT /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY/values/%27Test%20Sheet%27%21F2?valueInputOption=USER_ENTERED HTTP/1.1" 200 None
+2022-07-08 23:23:51,779 0 INFO - Update row action complete

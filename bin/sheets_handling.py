@@ -12,9 +12,9 @@ logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
 # authenticating access
 sa = gspread.service_account(filename='pysheetskeys.json')
 # Connect to our spreadsheets
-sh = sa.open("General Budgeting")
+sh = sa.open("Tarkov Butler")
 # Connect to our specific sheet
-wks = sh.worksheet("TestSheet")
+wks = sh.worksheet("Test Sheet")
 logging.info('Google sheets authentication successful')
 
 # Function will search a specified column to get the bottom of the list.
@@ -24,7 +24,7 @@ def get_next_empty_cell(column):
         if cell == None:
             start_point = (column, i)
             break
-    logging.info(f"start poing for next empty cell {start_point}")
+    logging.info(f"start looking for next empty cell {start_point}")
     return start_point
         
 # Used for updating one cell at a time, applicable for updating a list over time.
