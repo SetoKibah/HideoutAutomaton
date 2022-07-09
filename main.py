@@ -136,10 +136,11 @@ if __name__ == "__main__":
         logging.info(f"{item_top} completed successfully")
 
     # Display pertinent information (changes frequently)
-    print("\n**************************")       
-    for item in items_dictionary:
-        print(f"{item}: {items_dictionary[item]}")
-    print("**************************\n")
+    def display():    
+        print("\n**************************")       
+        for item in items_dictionary:
+            print(f"{item}: {items_dictionary[item]}")
+        print("**************************\n")
 
     # Take information and post it to our google sheet
     # Is not made available to general public. If wanted, create your own keys and give same file name.
@@ -148,4 +149,8 @@ if __name__ == "__main__":
         sheets_handling.update_row(item,items_dictionary[item], start_point_a)
         # Google sheets doesn't like us updating too frequently, so we impose our own time limits to help
         time.sleep(15)
+
+    for indvitem in items_list:
+        print(f'{indvitem:<35}\t{item_price_info(indvitem)["item_price"]}')
+        
     logging.info("Program successfully completed operation")
