@@ -34,11 +34,11 @@ import datetime as dt
 
 # Specific sheet for our data
 # authenticating access
-sa = gspread.service_account(filename=r'C:\Users\arche\Desktop\HideoutAutomaton\pysheetskeys.json')
+sa = gspread.service_account(filename=r'C:\Users\Bradley\Desktop\HideoutAutomaton\pysheetskeys.json')
 # Connect to our spreadsheets
-sh = sa.open("General Budgeting")
+sh = sa.open("Tarkov Butler")
 # Connect to our specific sheet
-wks = sh.worksheet("Tarkov Calculations")
+wks = sh.worksheet("Computer Vision")
 
 # Function will search a specified column to get the bottom of the list.
 def get_next_empty_cell(column):
