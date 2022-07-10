@@ -53,7 +53,7 @@ def highest_seller(list_of_vendors):
     #must be the list of sellFor
     highest_price = 0
     for seller in list_of_vendors:
-        if seller["price"] > highest_price and seller["source"] != "fleaMarket":
+        if seller["price"] > highest_price:
             highest_source = seller["source"]
             highest_price = seller["price"]
     item_highest_source = highest_source
@@ -65,7 +65,7 @@ def highest_vendor(list_of_vendors):
     #must be the list of sellFor
     highest_price = 0
     for seller in list_of_vendors:
-        if seller["price"] > highest_price and seller["vendor"]["name"] != "Flea Market":
+        if seller["price"] > highest_price:
             highest_source = seller["vendor"]["name"]
             highest_price = seller["price"]
     item_highest_source = highest_source
@@ -74,19 +74,23 @@ def highest_vendor(list_of_vendors):
     return (item_highest_price,item_highest_source)
 
 def compare_itemprice_componentstotalprice(item_input):
+
+    print(f'We are dealing with {itemVScomponentQuery(item_input)["name"]}')
+
     #trimmed_information
     trimmed_result = itemVScomponentQuery(item_input)["craftsFor"][0]
     trimmed_reward = trimmed_result["rewardItems"][0]
     trimmed_reward_seller_list = trimmed_reward["item"]["sellFor"]
 
-    #item information
+    #reward information
     reward_name = trimmed_reward["item"]["name"]
     reward_quantity = trimmed_reward["quantity"]
     reward_price = highest_seller(trimmed_reward_seller_list)[0]
     reward_vendor = highest_seller(trimmed_reward_seller_list)[1]
+
     reward_total_price = reward_quantity * reward_price
     
-        #Note to self: maybe add a component_total_list= []
+    #print(f'As a craft you can get {reward_quantity} {reward_name} which sell for {reward_price} with {reward_vendor} which brings the total to {reward_total_price}')
     
     #component information
     trimmed_components = trimmed_result["requiredItems"]
@@ -101,6 +105,8 @@ def compare_itemprice_componentstotalprice(item_input):
         component_vendor = highest_vendor(component_seller_list)[1]
         
         component_total_price += component_quantity * component_price
+
+        #print(f'As a component you can get {component_quantity:<5} {component_name:<35} which sell for {component_price:<7} with {component_vendor:<15} which brings the total to {component_total_price:>10}')
 
     #presenting and decision
     print(f'{item_input}-{reward_total_price},{component_total_list}-{component_total_price}')
