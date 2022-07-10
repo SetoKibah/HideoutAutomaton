@@ -24,6 +24,7 @@ def itemVScomponentQuery(item_input):
                                 name
                             }}
                         }}
+                        fleaMarketFee
                     }}
                     quantity
                 }}
@@ -34,6 +35,7 @@ def itemVScomponentQuery(item_input):
                             price
                             source
                         }}
+                        fleaMarketFee
                     }}
                     quantity
                 }}
@@ -75,7 +77,7 @@ def highest_vendor(list_of_vendors):
 
 def compare_itemprice_componentstotalprice(item_input):
 
-    print(f'We are dealing with {itemVScomponentQuery(item_input)["name"]}')
+    #print(f'We are dealing with {itemVScomponentQuery(item_input)["name"]}')
 
     #trimmed_information
     trimmed_result = itemVScomponentQuery(item_input)["craftsFor"][0]
@@ -87,35 +89,45 @@ def compare_itemprice_componentstotalprice(item_input):
     reward_quantity = trimmed_reward["quantity"]
     reward_price = highest_seller(trimmed_reward_seller_list)[0]
     reward_vendor = highest_seller(trimmed_reward_seller_list)[1]
+    if reward_vendor == "Flea Market" or reward_vendor == "fleaMarket":
+        reward_fleaMarketFee = trimmed_reward["item"]["fleaMarketFee"]
+        reward_price -= reward_fleaMarketFee
 
     reward_total_price = reward_quantity * reward_price
     
     #print(f'As a craft you can get {reward_quantity} {reward_name} which sell for {reward_price} with {reward_vendor} which brings the total to {reward_total_price}')
     
     #component information
-    trimmed_components = trimmed_result["requiredItems"]
+    trimmed_component = trimmed_result["requiredItems"]
     component_total_list= []
     component_total_price = 0
-    for component in trimmed_components:
+    for component in trimmed_component:
         component_quantity = component["quantity"]
         component_name = component["item"]["name"]
         component_total_list.append(f'{component_quantity}x {component_name}')
         component_seller_list = component["item"]["sellFor"]
         component_price = highest_vendor(component_seller_list)[0]
         component_vendor = highest_vendor(component_seller_list)[1]
-        
+        if component_vendor == "Flea Market" or component_vendor == "fleaMarket":
+            component_fleaMarketFee = trimmed_component[0]["item"]["fleaMarketFee"]
+            component_price -= component_fleaMarketFee
+
         component_total_price += component_quantity * component_price
 
         #print(f'As a component you can get {component_quantity:<5} {component_name:<35} which sell for {component_price:<7} with {component_vendor:<15} which brings the total to {component_total_price:>10}')
 
     #presenting and decision
-    print(f'{item_input}-{reward_total_price},{component_total_list}-{component_total_price}')
+    #print(f'{item_input}-{reward_total_price},{component_total_list}-{component_total_price}')
     if reward_total_price > component_total_price:
-        print("sell the item, you get more money")
-    elif reward_total_price == component_total_price:
-        print("they are the same")
+        #print("sell the item, you get more money")
+        give_back = (reward_name, reward_vendor, reward_total_price)
+    elif reward_total_price < component_total_price:
+        #print("sell it in components, you get more money")
+        give_back = (component_name, component_vendor, component_total_price)
     else:
-        print("sell it in components, you get more money")
+        print('they are the same, show master. "that will never be true" he says')
+
+    return (give_back)
 
 if __name__ == "__main__":
-    compare_itemprice_componentstotalprice('slickers')
+    print(compare_itemprice_componentstotalprice('pile of meds'))
