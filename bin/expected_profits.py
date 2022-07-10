@@ -10,6 +10,14 @@ def run_query(query):
         raise Exception("Query failed to run by returning code of {}. {}".format(response.status_code, query))
 
 
+# Create a progress bar so we know what we're doing
+def progress_bar(progress, total):
+    percent = 100 * (progress / float(total))
+    bar = '█' * int(percent) + ' ' * (100 - int(percent))
+    print(f"\r|{bar}| {percent:.2f}%", end="\r")
+
+
+
 items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip', 'eagle', 'can of max energy', 
             'scav backpack', 'canister with purified water', 'bottle of water', 'cms surgical kit', 'Can of Hot Rod energy drink',
              'ox bleach', 'secure flash drive', 'aramid fiber fabric', 'vodka', 'wilston cigarettes', 'bottle of water', 'emergency water ration',
@@ -78,10 +86,14 @@ start_index = 2
 ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
 ### Priority should go to Trader Price if available
 
-for item in items_list:
+progress_bar(0, len(items_list))
+for index, item in enumerate(items_list):
   expected_profit = component_acquisition(item)
   #print(f'{item}: {expected_profit}')
-  sheets_handling.update_single_cell(f'A{start_index}', item)
-  sheets_handling.update_single_cell(f'B{start_index}', expected_profit)
+  sheets_handling_profits.update_single_cell(f'A{start_index}', item)
+  sheets_handling_profits.update_single_cell(f'B{start_index}', expected_profit)
   start_index += 1
   sleep(1)
+  progress_bar(index + 1, len(items_list))
+
+print('\n### Projected Profits Updated')
