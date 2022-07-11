@@ -86,6 +86,7 @@ start_index = 2
 ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
 ### Priority should go to Trader Price if available
 
+
 progress_bar(0, len(items_list))
 for index, item in enumerate(items_list):
   expected_profit = component_acquisition(item)
