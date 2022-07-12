@@ -26,9 +26,13 @@ items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip
              '9x18mm pm pbm gzh', 'can of thermite', '12/70 flechette', 'magnet', 'kite', 'rechargeable battery', 'lucky scav junk box',
              'ana tactical m1 armored rig', 'magazine case', 'ak-74 5.45x39 6l31 60-round magazine', 'cordura', 'army bandage', 'ripstop fabric',
              'grizzly medical kit', 'vaseline balm', 'surv12 field surgical kit', 'calok-b hemostatic applicator', 'ai-2 medkit', 'medical bloodset', 
-             'can of condensed milk', 'Bottle of Tarkovskaya vodka']
+             'can of condensed milk', 'Bottle of Tarkovskaya vodka', 'corrugated hose', 'clin window cleaner',
+             'gas mask air filter', 'kirasa', 'kektape', 'fleece fabric', 'aluminum splint', 'blackrock chest rig', 'paracord', 'lshz light helmet',
+             'soap', '6b5-16', '6b5-15', 'water filter', 'grenade case', 'magnum buckshot', 'power cord', 'broken lcd', 'broken gphone', 
+             'round pliers', 'iskra', 'pack of sugar', 'can of beef stew (small)', 'kvass', 'coffee beans', 'sj1', 'portable defibrillator',
+             'xtg-12', 'expeditionary fuel tank']
 
-# hawk, fleece (multiple crafts)
+# hawk, fleece, 'pilgrim tourist backpack', 'vog-25',  Issues encountered
 
 
 def component_acquisition(end_item_name):
