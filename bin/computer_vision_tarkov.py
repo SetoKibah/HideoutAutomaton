@@ -118,14 +118,14 @@ cv2.destroyAllWindows()
 sleep(2)
 # Navigate to locations and get the info
 # First move to the main stash by selecting the Character button
-pyautogui.moveTo(pyautogui.locateCenterOnScreen(r"C:\Users\arche\Desktop\HideoutAutomaton\Character_Button.PNG", confidence = .8))
+pyautogui.moveTo(pyautogui.locateCenterOnScreen("Character_Button.PNG", confidence = .8))
 pyautogui.click()
 sleep(1)
 # Read the values and save the list
 individual_values = get_money_values()
 
 # Repeat the process for overall stash value
-pyautogui.moveTo(pyautogui.locateCenterOnScreen(r"C:\Users\arche\Desktop\HideoutAutomaton\Overall.PNG", confidence = .8))
+pyautogui.moveTo(pyautogui.locateCenterOnScreen("Overall.PNG", confidence = .8))
 pyautogui.click()
 sleep(1)
 overall_value = get_stash_overall()
