@@ -17,6 +17,18 @@ sh = sa.open("Tarkov Butler")
 wks = sh.worksheet("Projected Profits")
 logging.info('Google sheets authentication successful')
 
+# Function to check an item value in the list (meant for the computer_vision bit currently)
+def check_item(item_name):
+    values = wks.get_all_values()
+    average_price = 0
+    for value in values:
+        if item_name in value:
+            print(f'Item {item_name} current average value is: {value[2]}')
+            average_price = value[2]
+    return(average_price)
+
+        
+
 # Function will search a specified column to get the bottom of the list.
 def get_next_empty_cell(column):
     for i in range(1,999):

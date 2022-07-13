@@ -38,7 +38,7 @@ items_list = ['pile of meds', 'shampoo', 'slickers', 'wires', 'sj6', '9x19mm rip
 def component_acquisition(end_item_name):
   new_query = f"""
   {{
-      itemsByName(name: "{end_item_name}") {{
+      items(name: "{end_item_name}") {{
           name
           avg24hPrice
           fleaMarketFee
@@ -62,11 +62,11 @@ def component_acquisition(end_item_name):
   """
 
   result = run_query(new_query)
-  result = result['data']['itemsByName'][0]
-
-  output_price = int(result['avg24hPrice']) * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])
+  result = result['data']['items'][0]
   
-
+  item_price = int(result['avg24hPrice'])
+  output_price = item_price * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])
+  
   items = result['craftsFor'][0]['requiredItems']
   #output_price = result['avg24hPirce']
   cost = 0
@@ -81,7 +81,7 @@ def component_acquisition(end_item_name):
 #  print(f'\n\nEstimated Cost: {cost}')
 #  print(f'Output Price: {output_price}')
 #  print(f'Projected Profit: {(output_price) - cost}\n')
-  return(output_price - cost - (int(result['fleaMarketFee']) * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])))
+  return(output_price - cost - (int(result['fleaMarketFee']) * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])), item_price)
 
 start_index = 2
 
@@ -93,10 +93,11 @@ start_index = 2
 
 progress_bar(0, len(items_list))
 for index, item in enumerate(items_list):
-  expected_profit = component_acquisition(item)
+  expected_profit, item_price = component_acquisition(item)
   #print(f'{item}: {expected_profit}')
   sheets_handling_profits.update_single_cell(f'A{start_index}', item)
   sheets_handling_profits.update_single_cell(f'B{start_index}', expected_profit)
+  sheets_handling_profits.update_single_cell(f'C{start_index}', int(item_price))
   start_index += 1
   sleep(1)
   progress_bar(index + 1, len(items_list))

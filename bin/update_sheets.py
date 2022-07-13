@@ -51,7 +51,7 @@ def query_send_receive(item_input):
     # Query payload
     new_query = f"""
     {{
-        itemsByName(name: "{item_input}") {{
+        items(name: "{item_input}") {{
             name
             fleaMarketFee
             sellFor{{
@@ -66,7 +66,7 @@ def query_send_receive(item_input):
     result = run_query(new_query)
     logging.info(f"Result of run_query is {result}")
     trimmed_result = result['data']
-    trimmed_result = trimmed_result['itemsByName']
+    trimmed_result = trimmed_result['items']
     trimmed_result = trimmed_result[0]
     
     return trimmed_result
