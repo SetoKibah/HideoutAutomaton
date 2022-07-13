@@ -34,7 +34,7 @@ import datetime as dt
 
 # Specific sheet for our data
 # authenticating access
-sa = gspread.service_account(filename=r'C:\Users\Bradley\Desktop\HideoutAutomaton\pysheetskeys.json')
+sa = gspread.service_account(filename='pysheetskeys.json')
 # Connect to our spreadsheets
 sh = sa.open("Tarkov Butler")
 # Connect to our specific sheet
