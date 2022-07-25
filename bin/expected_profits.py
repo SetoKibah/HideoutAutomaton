@@ -40,8 +40,7 @@ def component_acquisition(end_item_name):
   {{
       items(name: "{end_item_name}") {{
           name
-          avg24hPrice
-          fleaMarketFee
+          avg24hPrice          
           craftsFor {{
             rewardItems{{
               item{{
@@ -60,7 +59,7 @@ def component_acquisition(end_item_name):
       }}
   }}
   """
-
+ 
   result = run_query(new_query)
   result = result['data']['items'][0]
   
@@ -77,11 +76,19 @@ def component_acquisition(end_item_name):
       #print(f"{name}: {price} ---- {quantity}")
       cost += int(price) * int(quantity)
 
+  flea_query = f"""
+  {{
+      items(name: "{end_item_name}") {{
+          fleaMarketFee(price:{item_price})
+          }}
+  }}
+  """
+  flea_fee = run_query(flea_query)
+  flea_fee = flea_fee['data']['items'][0]
+  flea_fee = flea_fee['fleaMarketFee']
+  #print(f"Old Fee: {result['fleaMarketFee']}\nNew Fee: {flea_fee}")
 
-#  print(f'\n\nEstimated Cost: {cost}')
-#  print(f'Output Price: {output_price}')
-#  print(f'Projected Profit: {(output_price) - cost}\n')
-  return(output_price - cost - (int(result['fleaMarketFee']) * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])), item_price)
+  return(output_price, cost, flea_fee, item_price, int(result['craftsFor'][0]['rewardItems'][0]['quantity']))
 
 start_index = 2
 
@@ -93,13 +100,25 @@ start_index = 2
 
 progress_bar(0, len(items_list))
 for index, item in enumerate(items_list):
-  expected_profit, item_price = component_acquisition(item)
+  output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
   #print(f'{item}: {expected_profit}')
   sheets_handling_profits.update_single_cell(f'A{start_index}', item)
-  sheets_handling_profits.update_single_cell(f'B{start_index}', expected_profit)
-  sheets_handling_profits.update_single_cell(f'C{start_index}', int(item_price))
+  sheets_handling_profits.update_single_cell(f'B{start_index}', cost)
+  sheets_handling_profits.update_single_cell(f'C{start_index}', fee)
+  sheets_handling_profits.update_single_cell(f'D{start_index}', item_price)
+  sheets_handling_profits.update_single_cell(f'E{start_index}', output_price)
+  sheets_handling_profits.update_single_cell(f'F{start_index}', output_quantity)
   start_index += 1
-  sleep(1)
+  sleep(4)
   progress_bar(index + 1, len(items_list))
 
 print('\n### Projected Profits Updated')
+
+
+
+### On Projected Profits sheet
+# Simple Profit proves the sheet does not require item price to get
+# the accurate profit expectation.
+# However, the program may want the item price in a more convenient location
+# while grabbing additional info to compare to.
+# Must decide whether to remove "Item_Price" column or leave for future calculations.

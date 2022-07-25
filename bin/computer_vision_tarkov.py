@@ -166,7 +166,7 @@ sleep(3)
 #################### Section looks at the top price in the list (assumed to be the lowest)
 test_price = get_specified_info(150, 190, 1300, 1500)
 #####################
-test_price = int(test_price.replace('p', ''))
+#test_price = int(test_price.replace('p', ''))
 
 print(f'The value the program sees is: {test_price}')
 pya.press('esc')
