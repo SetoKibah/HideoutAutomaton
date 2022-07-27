@@ -96,7 +96,7 @@ start_index = 2
 ### Currently only accounts for 24 hour price of all items, does not account for trader
 ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
 ### Priority should go to Trader Price if available
-
+sheets_handling_profits.update_single_cell('I2', 'UPDATING...')
 progress_bar(0, len(items_list))
 for index, item in enumerate(items_list):
   output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
@@ -114,6 +114,7 @@ for index, item in enumerate(items_list):
 print('\n### Projected Profits Updated')
 
 # Visual of time last updated for the sheet
+sheets_handling_profits.update_single_cell('I2', 'UPDATED')
 current_time = strftime("%m-%d %H:%M")
 sheets_handling_profits.update_single_cell('I3', current_time)
 
