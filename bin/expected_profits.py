@@ -1,5 +1,5 @@
 import requests
-from time import sleep
+from time import sleep, strftime
 import sheets_handling_profits
 
 def run_query(query):
@@ -97,7 +97,6 @@ start_index = 2
 ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
 ### Priority should go to Trader Price if available
 
-
 progress_bar(0, len(items_list))
 for index, item in enumerate(items_list):
   output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
@@ -114,7 +113,9 @@ for index, item in enumerate(items_list):
 
 print('\n### Projected Profits Updated')
 
-
+# Visual of time last updated for the sheet
+current_time = strftime("%m-%d %H:%M")
+sheets_handling_profits.update_single_cell('I3', current_time)
 
 ### On Projected Profits sheet
 # Simple Profit proves the sheet does not require item price to get
