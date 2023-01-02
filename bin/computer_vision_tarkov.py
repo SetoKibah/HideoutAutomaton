@@ -71,8 +71,8 @@ def get_specified_info(x1, x2, y1, y2):
     # (Works in a range(like 400:600, or 600:, or :600))
     cropped_region = screen_array[x1:x2, y1:y2, :]
     # Corrected Colors
-    corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
-    information = pytesseract.image_to_string(corrected_colors)
+    #corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
+    information = pytesseract.image_to_string(cropped_region)
     return(information)
 
 # Start from Main. Used to update current values
@@ -82,15 +82,15 @@ def update_values():
     # First move to the main stash by selecting the Character button
     pya.moveTo(pya.locateCenterOnScreen("Character_Button.PNG", confidence = CONFIDENCE))
     pya.click()
-    sleep(1)
+    sleep(2)
     # Read the values and save the list
     individual_values = get_specified_info(50, 80, 1640, None)
 
     # Repeat the process for overall stash value
     pya.moveTo(pya.locateCenterOnScreen("Overall.PNG", confidence = CONFIDENCE))
     pya.click()
-    sleep(1)
-    overall_value = get_specified_info(740, 790, 1050, 1300)
+    sleep(2)
+    overall_value = get_specified_info(740, 800, 1050, 1300)
     sleep(1)
 
     # Return to the main menu when complete
@@ -119,11 +119,15 @@ def update_values():
     wks.update(f'C{start[1]}', float(value_list[0][1:]))
     wks.update(f'D{start[1]}', float(value_list[1][1:]))
     wks.update(f'E{start[1]}', float(value_list[2][1:]))
-    wks.update(f'F{start[1]}', float(overall_value))
+    try:
+        wks.update(f'F{start[1]}', float(overall_value))
+    except:
+        print('Awful read, print failure to sheet and move on')
+        wks.update(f'F{start[1]}', 'Bad read')
 
 
 ### Block used for constantly showing current frames, keeping as a test tool for narrowing down areas
-"""
+
 # Loop over frames
 while True:
     # Take screenshot
@@ -132,7 +136,7 @@ while True:
     screen_array = np.array(screen)
     # Crop region (Note height, width, not sure on 3rd)
     # (Works in a range(like 400:600, or 600:, or :600))
-    cropped_region = screen_array[150:200, 1300:1500, :]
+    cropped_region = screen_array[150:190, 1340:1500, :]
     # Corrected Colors
     corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
     # Handle rendering
@@ -150,6 +154,7 @@ while True:
 # Close down the frame
 cv2.destroyAllWindows()
 """
+update_values()
 
 ###### Navigate to Flea and determine if item is within purchase parameters
 item_in_question = 'ai-2'
@@ -164,9 +169,19 @@ pya.click(pya.moveTo(123, 160, duration = .5))
 sleep(3)
 
 #################### Section looks at the top price in the list (assumed to be the lowest)
-test_price = get_specified_info(150, 190, 1300, 1500)
+test_price = get_specified_info(150, 190, 1340, 1500)
 #####################
-test_price = int(test_price.replace('p', ''))
+#test_price = int(test_price.replace('p', ''))
 
 print(f'The value the program sees is: {test_price}')
+# If the value is in Euros, should convert to equivalent ruble value
+if '€' in test_price:
+    test_price.replace('€', '')
+    test_price = int(test_price) * 114
+    print(f'The equivalent in rubles is {test_price}')
+elif 'p' in test_price:
+    test_price.replace('p', '')
+    print(f'Cleaned value: {test_price}')
+
 pya.press('esc')
+"""
