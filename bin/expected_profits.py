@@ -1,6 +1,7 @@
 import requests
 from time import sleep, strftime
 import sheets_handling_profits
+import sys
 
 def run_query(query):
     response = requests.post('https://api.tarkov.dev/graphql', json={'query': query})
@@ -64,8 +65,14 @@ def component_acquisition(end_item_name):
   result = result['data']['items'][0]
   
   item_price = int(result['avg24hPrice'])
-  output_price = item_price * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])
   
+  # Exit program if exception occurs, then close the program
+  try:
+    output_price = item_price * int(result['craftsFor'][0]['rewardItems'][0]['quantity'])
+  except Exception as e:
+    print(f'Exception occurred with {result}\nError code {e}')
+    sys.exit()
+    
   items = result['craftsFor'][0]['requiredItems']
   #output_price = result['avg24hPirce']
   cost = 0
@@ -90,37 +97,43 @@ def component_acquisition(end_item_name):
 
   return(output_price, cost, flea_fee, item_price, int(result['craftsFor'][0]['rewardItems'][0]['quantity']))
 
-start_index = 2
+
+def main():
+  start_index = 2
 
 
-### Currently only accounts for 24 hour price of all items, does not account for trader
-### lowest cost of anything. This results in inaccurate readings and must be accounted for.
-### Priority should go to Trader Price if available
-sheets_handling_profits.update_single_cell('I2', 'UPDATING...')
-progress_bar(0, len(items_list))
-for index, item in enumerate(items_list):
-  output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
-  #print(f'{item}: {expected_profit}')
-  sheets_handling_profits.update_single_cell(f'A{start_index}', item)
-  sheets_handling_profits.update_single_cell(f'B{start_index}', cost)
-  sheets_handling_profits.update_single_cell(f'C{start_index}', fee)
-  sheets_handling_profits.update_single_cell(f'D{start_index}', item_price)
-  sheets_handling_profits.update_single_cell(f'E{start_index}', output_price)
-  sheets_handling_profits.update_single_cell(f'F{start_index}', output_quantity)
-  start_index += 1
-  sleep(4)
-  progress_bar(index + 1, len(items_list))
+  ### Currently only accounts for 24 hour price of all items, does not account for trader
+  ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
+  ### Priority should go to Trader Price if available
+  sheets_handling_profits.update_single_cell('I2', 'UPDATING...')
+  progress_bar(0, len(items_list))
+  for index, item in enumerate(items_list):
+    output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
+    #print(f'{item}: {expected_profit}')
+    sheets_handling_profits.update_single_cell(f'A{start_index}', item)
+    sheets_handling_profits.update_single_cell(f'B{start_index}', cost)
+    sheets_handling_profits.update_single_cell(f'C{start_index}', fee)
+    sheets_handling_profits.update_single_cell(f'D{start_index}', item_price)
+    sheets_handling_profits.update_single_cell(f'E{start_index}', output_price)
+    sheets_handling_profits.update_single_cell(f'F{start_index}', output_quantity)
+    start_index += 1
+    sleep(4)
+    progress_bar(index + 1, len(items_list))
 
-print('\n### Projected Profits Updated')
+  print('\n### Projected Profits Updated')
 
-# Visual of time last updated for the sheet
-sheets_handling_profits.update_single_cell('I2', 'UPDATED')
-current_time = strftime("%m-%d %H:%M")
-sheets_handling_profits.update_single_cell('I3', current_time)
+  # Visual of time last updated for the sheet
+  sheets_handling_profits.update_single_cell('I2', 'UPDATED')
+  current_time = strftime("%m-%d %H:%M")
+  sheets_handling_profits.update_single_cell('I3', current_time)
 
-### On Projected Profits sheet
-# Simple Profit proves the sheet does not require item price to get
-# the accurate profit expectation.
-# However, the program may want the item price in a more convenient location
-# while grabbing additional info to compare to.
-# Must decide whether to remove "Item_Price" column or leave for future calculations.
+  ### On Projected Profits sheet
+  # Simple Profit proves the sheet does not require item price to get
+  # the accurate profit expectation.
+  # However, the program may want the item price in a more convenient location
+  # while grabbing additional info to compare to.
+  # Must decide whether to remove "Item_Price" column or leave for future calculations.
+
+# Run main for testing
+if __name__ == "__main__":
+  main()
