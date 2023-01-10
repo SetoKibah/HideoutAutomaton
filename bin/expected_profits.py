@@ -3,6 +3,7 @@ from time import sleep, strftime
 import sheets_handling_profits
 import sys
 
+
 def run_query(query):
     response = requests.post('https://api.tarkov.dev/graphql', json={'query': query})
     if response.status_code == 200:
