@@ -1,6 +1,13 @@
 # Purpose: Automate production in the hideout to produce mass profit to fund raids
 # Utilize: API with https://tarkov.dev/ and create our own database.
 
+### NEW CHANGES TO TARKOV
+# Hideout Stations are currently able to search items, useful tool for automation
+# Flea market is undergoing changes, will need monitoring.
+# Need to standardize acquiring crafting materials and starting crafts
+# Prepare for supervised testing, leading to unsupervised testing with logs
+
+
 # imports
 import logging
 import bin.update_sheets as update_sheets
