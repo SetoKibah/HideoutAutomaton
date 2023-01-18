@@ -41,7 +41,13 @@ def component_acquisition(end_item_name):
   {{
       items(name: "{end_item_name}") {{
           name
-          avg24hPrice          
+          avg24hPrice
+          sellFor{{
+            vendor{{
+              name
+            }}
+            priceRUB
+          }}          
           craftsFor {{
             rewardItems{{
               item{{
@@ -62,7 +68,20 @@ def component_acquisition(end_item_name):
   """
  
   result = run_query(new_query)
+  #print(result['data']['items'])
   result = result['data']['items'][0]
+
+  # Get highest vendor price
+  vendor_name = "None"
+  vendor_price = 0
+  vendors = result['sellFor']
+  for vendor in vendors:
+    if int(vendor['priceRUB']) > vendor_price:
+      vendor_name = vendor['vendor']['name']
+      vendor_price = int(vendor['priceRUB'])
+    print(f"Vendor: {vendor['vendor']['name']}\nSells: {vendor['priceRUB']}")
+  
+  print(f"{vendor_name}: {vendor_price} is the highest sale price")
   
   item_price = int(result['avg24hPrice'])
   
@@ -80,6 +99,7 @@ def component_acquisition(end_item_name):
       price = item['item']['avg24hPrice']
       name = item['item']['name']
       quantity = item['quantity']
+    
       #print(f"{name}: {price} ---- {quantity}")
       cost += int(price) * int(quantity)
 
@@ -95,7 +115,7 @@ def component_acquisition(end_item_name):
   flea_fee = flea_fee['fleaMarketFee']
   #print(f"Old Fee: {result['fleaMarketFee']}\nNew Fee: {flea_fee}")
 
-  return(output_price, cost, flea_fee, item_price, int(result['craftsFor'][0]['rewardItems'][0]['quantity']))
+  return(output_price, cost, flea_fee, item_price, int(result['craftsFor'][0]['rewardItems'][0]['quantity']), vendor_name, vendor_price)
 
 
 def main():
@@ -105,10 +125,10 @@ def main():
   ### Currently only accounts for 24 hour price of all items, does not account for trader
   ### lowest cost of anything. This results in inaccurate readings and must be accounted for.
   ### Priority should go to Trader Price if available
-  sheets_handling_profits.update_single_cell('I2', 'UPDATING...')
+  sheets_handling_profits.update_single_cell('J2', 'UPDATING...')
   progress_bar(0, len(items_list))
   for index, item in enumerate(items_list):
-    output_price, cost, fee, item_price, output_quantity = component_acquisition(item)
+    output_price, cost, fee, item_price, output_quantity, vendor_name, vendor_price = component_acquisition(item)
     #print(f'{item}: {expected_profit}')
     sheets_handling_profits.update_single_cell(f'A{start_index}', item)
     sheets_handling_profits.update_single_cell(f'B{start_index}', cost)
@@ -116,6 +136,8 @@ def main():
     sheets_handling_profits.update_single_cell(f'D{start_index}', item_price)
     sheets_handling_profits.update_single_cell(f'E{start_index}', output_price)
     sheets_handling_profits.update_single_cell(f'F{start_index}', output_quantity)
+    sheets_handling_profits.update_single_cell(f'H{start_index}', vendor_name)
+    sheets_handling_profits.update_single_cell(f'I{start_index}', vendor_price)
     start_index += 1
     sleep(4)
     progress_bar(index + 1, len(items_list))
@@ -123,9 +145,9 @@ def main():
   print('\n### Projected Profits Updated')
 
   # Visual of time last updated for the sheet
-  sheets_handling_profits.update_single_cell('I2', 'UPDATED')
+  sheets_handling_profits.update_single_cell('J2', 'UPDATED')
   current_time = strftime("%m-%d %H:%M")
-  sheets_handling_profits.update_single_cell('I3', current_time)
+  sheets_handling_profits.update_single_cell('J3', current_time)
 
   ### On Projected Profits sheet
   # Simple Profit proves the sheet does not require item price to get
