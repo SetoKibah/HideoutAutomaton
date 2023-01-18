@@ -80,9 +80,10 @@ def component_acquisition(end_item_name):
     if int(vendor['priceRUB']) > vendor_price:
       vendor_name = vendor['vendor']['name']
       vendor_price = int(vendor['priceRUB'])
-    print(f"Vendor: {vendor['vendor']['name']}\nSells: {vendor['priceRUB']}")
+    #print(f"Vendor: {vendor['vendor']['name']}\nSells: {vendor['priceRUB']}")
   
-  print(f"{vendor_name}: {vendor_price} is the highest sale price")
+  #print(f"{vendor_name}: {vendor_price} is the highest sale price")
+  
   
   item_price = int(result['avg24hPrice'])
   
