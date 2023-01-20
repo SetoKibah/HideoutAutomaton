@@ -14,6 +14,7 @@ This project is designed to take inputs from multiple sources, including the use
   - datetime
   - gspread
   - logging
+  - xlsx
 
 **Note**: pytesseract is a wrapper for the Tesseract OCR, and is not a standalone package. Installation of the Tesseract OCR is required. Example instructions on installation and first-time setup can be found here: https://stackabuse.com/pytesseract-simple-python-optical-character-recognition/
 
@@ -25,6 +26,7 @@ Features may be added as the project becomes more complex, but the current desig
 - The end-goal is to have this operate on items you choose in the hideout (one per station to start)  and dynamically check prices using in-game information and 3rd-party analytics, as well as log the performance of your sales and overall stash value over time. 
 - GUI implementation is not planned as this will largely operate without supervision. 
 - Option to add a specified run-time/interval is being considered, but not promised at this time.
+- Login and logout to comply with Battlestate not wanting users logged in and idle.
 
 ## Issues and bugs
 Any issues and bugs should be submitted for review. Pull requests are welcome and are reviewed ASAP.
