@@ -8,6 +8,22 @@
 # Prepare for supervised testing, leading to unsupervised testing with logs
 
 
+########################################## New Component Idea
+# Handler for looted raid items to flea market
+# Can pull image data from API (see GraphQL playground)
+# Finish raids, leave items in top rows -> Bot runs until no items found
+# On end logout
+
+# Bot process
+#   - Identify item
+#   - Select filter
+#   - Gets average price
+#   - Places at average price
+#   - IF item cannot sell to Flea, Sell to highest Vendor
+#   - If no items are detected, assume done and exit game
+##########################################
+
+
 # imports
 import logging
 import bin.update_sheets as update_sheets
