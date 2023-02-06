@@ -25,6 +25,3 @@ for item_name in items_list:
     img_data = requests.get(link).content
     with open(f'images\{item_name}.png', 'wb') as handler:
         handler.write(img_data)
-
-#im = Image.open('pile_of_meds.webp')
-#im.save('pile_of_meds.png', format="png", lossless=True)

@@ -5,7 +5,7 @@ import numpy as np
 import random
 import pytesseract as tess
 import requests
-from PIL import Image
+
 
 
 def run_query(query):
