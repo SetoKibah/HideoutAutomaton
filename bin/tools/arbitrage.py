@@ -1,10 +1,13 @@
 # This tool will find items within instant-profit range for reselling to traders
 # Requires trader price and average 24 hour price
-
+import collections
+import collections.abc
+collections.MutableMapping = collections.abc.MutableMapping
+import sys
 import requests
+from collections.abc import MutableMapping
 from time import sleep, strftime
 import tools_sheets
-import sys
 
 
 def run_query(query):
