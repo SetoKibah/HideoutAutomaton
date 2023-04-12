@@ -17,7 +17,10 @@ def run_query(query):
     else:
         raise Exception("Query failed to run by returning code of {}. {}".format(response.status_code, query))
 
-
+def progress_bar(progress, total):
+    percent = 100 * (progress / float(total))
+    bar = '█' * int(percent) + ' ' * (100 - int(percent))
+    print(f"\r|{bar}| {percent:.2f}%", end="\r")
   
 def data_clean():
     start_index = 2
@@ -39,13 +42,14 @@ def data_clean():
     data_raw = run_query(query)
     data_list = data_raw['data']['items']
     
-    for item in data_list:
+    progress_bar(0, len(data_list))
+    for index,item in enumerate(data_list):
         name, average_price, low_price = item['name'], item['avg24hPrice'], item['low24hPrice']
         
         highest_vendor, highest_price = None, 0
         for vendor in item['sellFor']:
-            print(vendor['vendor']['name'])
-            print(vendor['priceRUB'])
+            #print(vendor['vendor']['name'])
+            #print(vendor['priceRUB'])
             if int(vendor['priceRUB']) > highest_price:
                 if vendor['vendor']['name'] == "Flea Market":
                     flea_price = int(vendor['priceRUB'])
@@ -57,8 +61,8 @@ def data_clean():
         #print(name)
         if low_price != None:
             if highest_price > low_price:
-                print(f'Name: {name}')
-                print(f'Low 24hr vs highest price: {low_price} vs {highest_price}')
+             #   print(f'Name: {name}')
+             #   print(f'Low 24hr vs highest price: {low_price} vs {highest_price}')
                 tools_sheets.update_single_cell(f'A{start_index}', name)
                 tools_sheets.update_single_cell(f'B{start_index}', average_price)
                 tools_sheets.update_single_cell(f'C{start_index}', low_price)
@@ -66,7 +70,7 @@ def data_clean():
                 tools_sheets.update_single_cell(f'E{start_index}', highest_vendor)
                 start_index += 1
                 sleep(5)
-                
+        progress_bar(index + 1, len(data_list))
 if __name__ == "__main__":
     data_clean()
     print('Complete')
