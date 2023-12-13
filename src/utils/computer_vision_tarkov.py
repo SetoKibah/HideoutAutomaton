@@ -1,39 +1,30 @@
-# Experimenting with Computer Vision in Tarkov
-# Meant for the scanning of certain values on certain areas of the screen
+"""
+This program is designed to perform the following tasks:
+- Log actions performed in game
+- Put hourly values into a spreadsheet, with timestamps of when collected
+- Identify ROI of specified items we are crafting
+- Effectively start crafts on a rotation
+- Restock supplies for crafts, but stay under certain range
+- Run constantly, including logging into the game and logging out
+- Potentially monitor fuel remaining, possibility to replace fuel
+"""
 
-# Areas/values we want to look at and get
-#   - Total Stash Value? (COMPLETE)
-#   - Stash Rubles Count (COMPLETE)
-#   - Stash Euros Count (COMPLETE)
-#   - Stash USD Count (COMPLETE)
-#   - Top flea value for selection? (Needs Crop Region)
-#   - Flea fee price for input price (Needs Crop Region)
+# Standard library imports
+from time import sleep
+import time
+import datetime as dt
 
-# Desired actions (After basic flea market understanding is achieved)
-#   - Determine profit from sale of items ------------------------------------[]
-#   - Track our monetary value over time -------------------------------------[]
-#   - Log actions performed in game ------------------------------------------[]
-#   - Put hourly values into a spreadsheet, with timestamps of when collected []
-#   - Identify ROI of specified items we are crafting ------------------------[]
-#   - Effectively start crafts on a rotation ---------------------------------[]
-#   - Restock supplies for crafts, but stay under certain range --------------[]
-#   - Run constantly, including logging into the game and logging out --------[]
-#   - Potentially monitor fuel remaining, possibility to replace fuel --------[]
-
-
-### Computer Vision Testing, will convert to running program when working as intended
-# Import dependencies
+# Related third party imports
 import pyautogui as pya
 import cv2
 import numpy as np
 import pytesseract
 import gspread
-from time import sleep
-import sheets_handling_profits
-import time
-import datetime as dt
 
-# Global Confidence Variable
+# Local application/library specific imports
+import sheets_handling_profits
+
+# Global constant for confidence level in computer vision tasks
 CONFIDENCE = 0.8
 
 # Specific sheet for our data
