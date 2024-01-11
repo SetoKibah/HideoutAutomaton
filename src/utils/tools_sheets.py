@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
                     format="%(asctime)s 0 %(levelname)s - %(message)s")
 
 # authenticating access
-sa = gspread.service_account(filename=r'C:\Users\arche\Desktop\HideoutAutomaton\bin\pysheetskeys.json')
+sa = gspread.service_account(filename=r'src\config\pysheetskeys.json')
 # Connect to our spreadsheets
 sh = sa.open("Tarkov Butler")
 # Connect to our specific sheet
