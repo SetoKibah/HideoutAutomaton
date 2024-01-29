@@ -26,7 +26,7 @@
 
 # imports
 import logging
-import bin.update_sheets as update_sheets
+from utils import update_sheets
 
 
 # Setup basic logging configuration ()

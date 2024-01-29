@@ -1,9 +1,8 @@
 # imports
 import requests
 import logging
-import bin.sheets_handling as sheets_handling
 import time
-
+from utils import sheets_handling
 
 # Setup basic logging configuration
 logging.basicConfig(level=logging.INFO, filename="Automaton_sheets.log", filemode="w",
