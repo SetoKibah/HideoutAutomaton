@@ -1,0 +1,8 @@
+2024-02-01 21:31:20,994 0 DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2024-02-01 21:31:20,996 0 DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2024-02-01 21:31:20,998 0 DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2024-02-01 21:31:21,265 0 DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2024-02-01 21:31:21,267 0 DEBUG - Starting new HTTPS connection (1): www.googleapis.com:443
+2024-02-01 21:31:21,794 0 DEBUG - https://www.googleapis.com:443 "GET /drive/v3/files?q=mimeType%3D%22application%2Fvnd.google-apps.spreadsheet%22+and+name+%3D+%22Tarkov+Butler%22&pageSize=1000&supportsAllDrives=True&includeItemsFromAllDrives=True&fields=kind%2CnextPageToken%2Cfiles%28id%2Cname%2CcreatedTime%2CmodifiedTime%29 HTTP/1.1" 200 None
+2024-02-01 21:31:21,796 0 DEBUG - Starting new HTTPS connection (1): sheets.googleapis.com:443
+2024-02-01 21:31:22,462 0 DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1YWwqG_wUf0jHx0b3XIkSSC-Nh1QTQanl-F6Xisvf9VY?includeGridData=false HTTP/1.1" 200 None

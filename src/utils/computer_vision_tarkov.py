@@ -1,56 +1,36 @@
-"""
-This program is designed to perform the following tasks:
-- Log actions performed in game
-- Put hourly values into a spreadsheet, with timestamps of when collected
-- Identify ROI of specified items we are crafting
-- Effectively start crafts on a rotation
-- Restock supplies for crafts, but stay under certain range
-- Run constantly, including logging into the game and logging out
-- Potentially monitor fuel remaining, possibility to replace fuel
-"""
-
-# Standard library imports
 from time import sleep
-import time
 import datetime as dt
-
-# Related third party imports
 import pyautogui as pya
 import cv2
 import numpy as np
 import pytesseract
 import gspread
-
-# Local application/library specific imports
 import sheets_handling_profits
+import gspread
+import pytesseract
 
 # Global constant for confidence level in computer vision tasks
 CONFIDENCE = 0.8
 
 # Specific sheet for our data
 # authenticating access
-sa = gspread.service_account(filename='pysheetskeys.json')
+sa = gspread.service_account(filename=r'src\config\pysheetskeys.json')
 # Connect to our spreadsheets
 sh = sa.open("Tarkov Butler")
 # Connect to our specific sheet
 wks = sh.worksheet("Computer Vision")
 
-# Function will search a specified column to get the bottom of the list.
-def get_next_empty_cell(column):
-    for i in range(1,999):
-        cell = wks.acell(f'{column}{i}').value
-        if cell == None:
-            start_point = (column, i)
-            break
-    return start_point
-
-
 # Set path for pytesseract (will need to change for different computers potentially if not set to PATH)
 pytesseract.pytesseract.tesseract_cmd = r'D:\Program Files\Tesseract-OCR\tesseract.exe'
 
-##### Temporary Important Info Locations
-# Top right money values: screen_array[40:80, 1650:, :]
-# Total Stash Value on Overall: screen_array[740:790, 1050:1300, :]
+# Function will search a specified column to get the bottom of the list.
+def get_next_empty_cell(column):
+    for i in range(1, 999):
+        cell = wks.acell(f'{column}{i}').value
+        if cell is None:
+            start_point = (column, i)
+            break
+    return start_point
 
 # Function gets a specific area of the screen, reads it, and returns the info
 def get_specified_info(x1, x2, y1, y2):
@@ -66,57 +46,74 @@ def get_specified_info(x1, x2, y1, y2):
     information = pytesseract.image_to_string(cropped_region)
     return(information)
 
-# Start from Main. Used to update current values
-def update_values():
-    sleep(2)
-    # Navigate to locations and get the info
-    # First move to the main stash by selecting the Character button
-    pya.moveTo(pya.locateCenterOnScreen("Character_Button.PNG", confidence = CONFIDENCE))
-    pya.click()
-    sleep(2)
-    # Read the values and save the list
-    individual_values = get_specified_info(50, 80, 1640, None)
+def update_values(rubles, euros, dollars, combined):
+    # Get the next empty cell in the Rubles column
+    rubles_cell = get_next_empty_cell('A')
+    # Get the next empty cell in the Euros column
+    euros_cell = get_next_empty_cell('B')
+    # Get the next empty cell in the Dollars column
+    dollars_cell = get_next_empty_cell('C')
+    # Get the next empty cell in the Time column
+    time_cell = get_next_empty_cell('E')
+    # Get the next empty cell in the Date column
+    date_cell = get_next_empty_cell('F')
 
-    # Repeat the process for overall stash value
-    pya.moveTo(pya.locateCenterOnScreen("Overall.PNG", confidence = CONFIDENCE))
-    pya.click()
-    sleep(2)
-    overall_value = get_specified_info(740, 800, 1050, 1300)
-    sleep(1)
+    # Update the Rubles value in the corresponding cell
+    wks.update(f'{rubles_cell[0]}{rubles_cell[1]}', rubles)
+    # Update the Euros value in the corresponding cell
+    wks.update(f'{euros_cell[0]}{euros_cell[1]}', euros)
+    # Update the Dollars value in the corresponding cell
+    wks.update(f'{dollars_cell[0]}{dollars_cell[1]}', dollars)
+    # Update the combined ruble value in the corresponding cell
+    wks.update(f'D{rubles_cell[1]}', combined)
+    # Update the current time in the corresponding cell
+    wks.update(f'{time_cell[0]}{time_cell[1]}', dt.datetime.now().strftime("%H:%M:%S"))
+    # Update the current date in the corresponding cell
+    wks.update(f'{date_cell[0]}{date_cell[1]}', dt.datetime.now().strftime("%Y-%m-%d"))
+  
+def total_liquid_rubles():
+    # Take screenshot
+    screen = pya.screenshot()
+    # Convert to numpy array
+    screen_array = np.array(screen)
+    # Crop region
+    cropped_region = screen_array[42:74, 1620:1920, :]
+    # Corrected Colors
+    corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
+    
+    # Get text from specified image area
+    raw_string = pytesseract.image_to_string(corrected_colors)
 
-    # Return to the main menu when complete
-    pya.press('esc')
-    value_list = individual_values.split(" ")
-    overall_value = overall_value.replace('\n', '')
+    # Separate the string into 3 parts
+    string_1, string_2, string_3 = raw_string.split(' ')
+    
+    # Remove the first character from each string
+    string_1 = string_1[1:]
+    string_2 = string_2[1:]
+    string_3 = string_3[1:]
+    
+    # Convert each string to int
+    int_1 = int(string_1)
+    int_2 = int(string_2)
+    int_3 = int(string_3)
+    
+    # Print the values of the 3 strings
+    print(f'Rubles: ₽{int_1:,}\nEuros: €{int_2:,}\nDollars: ${int_3:,}')
+    
+    # Calculate the combined value in rubles
+    combined = int_1 + (int_2 * 158) + (int_3 * 143)
+    
+    # Print the combined value formatted in rubles with commas
+    print(f'Combined in Rubles: ₽{combined:,}')
+    
+    return int_1, int_2, int_3, combined
 
-    # Display information and compare to actual values for review
-    print(f"\nOur overall ruble value is: ₽{overall_value}\nCurrent Rubles: ₽{value_list[0]}\nCurrent Euros: {value_list[1]}\nCurrent USD: {value_list[2]}" )
+if __name__ == "__main__":
+    rubles, euros, dollars, combined = total_liquid_rubles()
+    update_values(rubles, euros, dollars, combined)
 
-    # Append data to our google sheets
-    # Format: Date, Time, Overall, Ruble Liq, Euro Liq, Dollar Liq
-
-    # Getting date and time format setup
-    today = dt.datetime.now()
-    today_string = today.strftime("%m-%d-%Y %H:%M")
-    today_list = today_string.split(' ')
-    now = today_list[1]
-    today = today_list[0]
-
-    # Upload to google sheet
-    start = get_next_empty_cell('A')
-
-    wks.update(f'A{start[1]}', today)
-    wks.update(f'B{start[1]}', now)
-    wks.update(f'C{start[1]}', float(value_list[0][1:]))
-    wks.update(f'D{start[1]}', float(value_list[1][1:]))
-    wks.update(f'E{start[1]}', float(value_list[2][1:]))
-    try:
-        wks.update(f'F{start[1]}', float(overall_value))
-    except:
-        print('Awful read, print failure to sheet and move on')
-        wks.update(f'F{start[1]}', 'Bad read')
-
-
+    
+"""
 ### Block used for constantly showing current frames, keeping as a test tool for narrowing down areas
 
 # Loop over frames
@@ -127,7 +124,7 @@ while True:
     screen_array = np.array(screen)
     # Crop region (Note height, width, not sure on 3rd)
     # (Works in a range(like 400:600, or 600:, or :600))
-    cropped_region = screen_array[150:190, 1340:1500, :]
+    cropped_region = screen_array[42:74, 1620:1920, :]
     # Corrected Colors
     corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
     # Handle rendering
@@ -135,8 +132,7 @@ while True:
     
     # Will get text from specified image area
     #print(pytesseract.image_to_string(corrected_colors))
-    #sleep(30)
-    
+
     # Cv2.waitkey
     if cv2.waitKey(1) & 0xFF==ord('q'):
         break
@@ -144,35 +140,4 @@ while True:
 
 # Close down the frame
 cv2.destroyAllWindows()
-"""
-update_values()
-
-###### Navigate to Flea and determine if item is within purchase parameters
-item_in_question = 'ai-2'
-print('Seeking...')
-sleep(2)
-pya.click(pya.moveTo(pya.locateCenterOnScreen('Flea_Market_Button.PNG', confidence = CONFIDENCE), duration = .5))
-sleep(1)
-pya.click(pya.moveTo(123, 120, duration = .5))
-pya.typewrite(item_in_question, interval=.1)
-sleep(2)
-pya.click(pya.moveTo(123, 160, duration = .5))
-sleep(3)
-
-#################### Section looks at the top price in the list (assumed to be the lowest)
-test_price = get_specified_info(150, 190, 1340, 1500)
-#####################
-#test_price = int(test_price.replace('p', ''))
-
-print(f'The value the program sees is: {test_price}')
-# If the value is in Euros, should convert to equivalent ruble value
-if '€' in test_price:
-    test_price.replace('€', '')
-    test_price = int(test_price) * 114
-    print(f'The equivalent in rubles is {test_price}')
-elif 'p' in test_price:
-    test_price.replace('p', '')
-    print(f'Cleaned value: {test_price}')
-
-pya.press('esc')
 """
