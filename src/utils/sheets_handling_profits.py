@@ -6,8 +6,12 @@ import datetime as dt
 import logging
 
 # Setup basic logging configuration
-logging.basicConfig(level=logging.DEBUG, filename="Automaton.log", filemode="w",
-                    format="%(asctime)s 0 %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename="Automaton.log",
+    filemode="w",
+    format="%(asctime)s - %(levelname)s: %(message)s"  # Updated log message format
+)
 
 # authenticating access
 sa = gspread.service_account(filename=r'C:\Users\Bradley\Desktop\HideoutAutomaton\HideoutAutomaton\bin\pysheetskeys.json')
@@ -23,22 +27,20 @@ def check_item(item_name):
     average_price = 0
     for value in values:
         if item_name in value:
-            print(f'Item {item_name} current average value is: {value[2]}')
+            logging.info(f'Item {item_name} current average value is: {value[2]}')  # Log the item value
             average_price = value[2]
-    return(average_price)
-
-        
+    return average_price
 
 # Function will search a specified column to get the bottom of the list.
 def get_next_empty_cell(column):
-    for i in range(1,999):
+    for i in range(1, 999):
         cell = wks.acell(f'{column}{i}').value
         if cell == None:
             start_point = (column, i)
             break
-    logging.info(f"start looking for next empty cell {start_point}")
+    logging.info(f"Start looking for next empty cell: {start_point}")  # Log the start point
     return start_point
-        
+
 # Used for updating one cell at a time, applicable for updating a list over time.
 def update_single_cell(cell, input_value):
     wks.update(cell, input_value)

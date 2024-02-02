@@ -1,3 +1,4 @@
+import logging
 from time import sleep
 import datetime as dt
 import pyautogui as pya
@@ -8,6 +9,9 @@ import gspread
 import sheets_handling_profits
 import gspread
 import pytesseract
+
+# Configure logging
+logging.basicConfig(filename='Automaton.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Global constant for confidence level in computer vision tasks
 CONFIDENCE = 0.8
@@ -44,7 +48,7 @@ def get_specified_info(x1, x2, y1, y2):
     # Corrected Colors
     #corrected_colors = cv2.cvtColor(cropped_region, cv2.COLOR_RGB2BGR)
     information = pytesseract.image_to_string(cropped_region)
-    return(information)
+    return information
 
 def update_values(rubles, euros, dollars, combined):
     # Get the next empty cell in the Rubles column
@@ -97,14 +101,16 @@ def total_liquid_rubles():
     int_2 = int(string_2)
     int_3 = int(string_3)
     
-    # Print the values of the 3 strings
-    print(f'Rubles: ₽{int_1:,}\nEuros: €{int_2:,}\nDollars: ${int_3:,}')
+    # Log the values of the 3 strings
+    logging.info(f'Rubles: ₽{int_1:,}')
+    logging.info(f'Euros: €{int_2:,}')
+    logging.info(f'Dollars: ${int_3:,}')
     
     # Calculate the combined value in rubles
     combined = int_1 + (int_2 * 158) + (int_3 * 143)
     
-    # Print the combined value formatted in rubles with commas
-    print(f'Combined in Rubles: ₽{combined:,}')
+    # Log the combined value formatted in rubles with commas
+    logging.info(f'Combined in Rubles: ₽{combined:,}')
     
     return int_1, int_2, int_3, combined
 
